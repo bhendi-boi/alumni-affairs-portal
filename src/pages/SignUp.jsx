@@ -1,31 +1,45 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+
+// components and styles
+import PhoneInput from "../components/PhoneInput";
+import SubmitButton from "../components/SubmitButton";
 import { InputLabel } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 
+// hooks
+import useLocalStorageState from "../hooks/useLocalStorageState";
+import iiitdmLogo from "../assets/images/iiitdmLogo.png";
 //
 const SignUp = () => {
   // state
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useLocalStorageState("signInData", {
     username: "",
     password: "",
     email: "",
     branch: "",
     linkedInProfileName: "",
     rollNo: "",
-    phoneNumber: "",
+    phoneNumber: null,
   });
+  console.log(formData.phoneNumber);
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   // variables
-  const whileTap = isDisabled ? {} : { scale: 0.96 };
-  const whileHover = isDisabled ? {} : { scale: 1.02 };
+
+  const inputClassName =
+    "inline w-[85%] mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300 focus:ring-blue-600 focus:outline-none invalid:ring-red-600";
+
+  // effects
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, phoneNumber: phoneNumber.toString() }));
+  }, [phoneNumber]);
 
   // helper functions
   const validateData = () => {
@@ -67,80 +81,75 @@ const SignUp = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-blue-200 flex justify-center items-center ">
-      <div
-        className="w-[100%] sm:w-[80%] sm:h-[80%] bg-yellow-200 border-red-500 border-2 flex flex-col  sm:flex-row
-      
-      "
-      >
-        <div className="w-[100%] h-20 sm:h-[100%] sm:w-[50%] flex sm:justify-center sm:items-center border-black border-r-2 ">
-          <img src="" alt="alumni portal logo" className="rounded" />
-        </div>
-        <div className=" w-[100%]  sm:w-[60%]  bg-white">
-          <h2>Create your account by filling the form below</h2>
+    <main className="h-screen w-screen flex justify-center items-center">
+      <section className="w-screen sm:w-[90%] md:w-[80%] sm:h-[90%] md:h-[80%]  border-2 shadow-2xl flex flex-col  sm:flex-row rounded-2xl">
+        <section className="w-full h-[300px] sm:h-full sm:w-[40%] flex sm:justify-center sm:items-center p-10">
+          <img src={iiitdmLogo} alt="alumni portal logo" className="rounded" />
+        </section>
+        <section className="w-full sm:w-[60%] flex flex-col justify-between">
+          <p className="self-center">
+            Create your account by filling the form below
+          </p>
           <form
+            className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2 content-center"
             onSubmit={(e) => handleSubmit(e)}
-            className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2 mt-12"
           >
-            <input
-              onChange={handleChange}
-              value={formData.username}
-              type="text"
-              name="username"
-              placeholder="Name*"
-              required
-              className="inline w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
-            />
+            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+              <input
+                onChange={handleChange}
+                value={formData.username}
+                type="text"
+                name="username"
+                placeholder="Name*"
+                required
+                className={inputClassName}
+              />
+            </div>
+            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+              <input
+                onChange={handleChange}
+                value={formData.rollNo}
+                type="text"
+                name="rollNo"
+                placeholder="Roll no"
+                className={inputClassName}
+              />
+            </div>
+            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+              <input
+                onChange={handleChange}
+                value={formData.email}
+                type="email"
+                name="emailId"
+                placeholder="Email ID*"
+                required
+                className={inputClassName}
+              />
+            </div>
 
-            <input
-              onChange={handleChange}
-              value={formData.rollNo}
-              type="text"
-              name="rollNo"
-              placeholder="Roll no"
-              className="inline w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
-            />
-            <input
-              onChange={handleChange}
-              value={formData.email}
-              type="email"
-              name="emailId"
-              placeholder="Email ID*"
-              required
-              className="inline w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
-            />
-            <input
-              onChange={handleChange}
-              value={formData.phoneNumber}
-              type="phone number"
-              name="phoneNumber"
-              placeholder="Phone number"
-              className="inline w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400 "
-            />
-
-            <input
-              onChange={handleChange}
-              value={formData.linkedInProfileName}
-              type="text"
-              name="linkedInProfileName"
-              placeholder="LinkedIn username"
-              className="inline w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
-            />
-            <div className="w-[85%]  col-span-2 sm:col-span-1 mx-auto sm:mx-4  px-2 py-2 ">
+            <div className=" w-[85%] sm:w-[90%]  mx-auto sm:mx-2  flex justify-center items-center col-span-2 sm:col-span-1">
+              <PhoneInput
+                phoneNumber={phoneNumber}
+                setPhoneNumber={setPhoneNumber}
+              />
+            </div>
+            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+              <input
+                onChange={handleChange}
+                value={formData.linkedInProfileName}
+                type="text"
+                name="linkedInProfileName"
+                placeholder="LinkedIn username"
+                className={inputClassName}
+              />
+            </div>
+            <div className="w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4  px-2 py-2 ">
               <FormControl>
-                <InputLabel htmlFor="branch">Branch</InputLabel>
+                <InputLabel htmlFor="branch" className="mt-2">
+                  Branch
+                </InputLabel>
                 <NativeSelect onChange={handleChange} name="branch" id="branch">
-                  <option value={"EC"}>Electonics</option>
+                  <option value={"EC"}>Electronics</option>
                   <option value={"CS"}>Computer Science</option>
                   <option value={"CSAI"}>
                     Computer Science with major in AI
@@ -150,56 +159,57 @@ const SignUp = () => {
                 </NativeSelect>
               </FormControl>
             </div>
-
-            <input
-              onChange={handleChange}
-              value={formData.password}
-              type="text"
-              name="password"
-              placeholder="Create password*"
-              required
-              className="col-span-2 mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
+            <div className="flex justify-center items-center col-span-2">
+              <input
+                onChange={handleChange}
+                value={formData.password}
+                type="password"
+                name="password"
+                placeholder="Create password*"
+                required
+                className="w-[85%] block sm:w-[90%] mx-auto sm:mx-6 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300
+                       focus:ring-blue-600 focus:outline-none
+                       invalid:ring-red-600"
+              />
+            </div>
+            <div className="flex justify-center items-center col-span-2">
+              <input
+                onChange={(e) => {
+                  setConfirmPassword(`${e.target.value}`);
+                }}
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm password*"
+                required
+                className="w-[85%] block sm:w-[90%]  col-span-2 mx-auto sm:mx-6 my-2 px-2 pr-4  py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300
+                      focus:ring-blue-600 focus:outline-none
+                      invalid:ring-red-600"
+              />
+            </div>
+            {error && (
+              <div className="flex justify-center items-center">
+                <p>{error}</p>
+              </div>
+            )}
+            <SubmitButton
+              className={"block col-span-2 mx-4 my-2 p-2 rounded-md"}
+              isDisabled={isDisabled}
             />
-            <input
-              onChange={(e) => {
-                setConfirmPassword(`${e.target.value}`);
-              }}
-              type="text"
-              name="confirmPassword"
-              placeholder="Confirm password*"
-              required
-              className="col-span-2 mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 transition duration-300
-        focus:ring-2 focus:ring-sky-300 focus:outline-none
-        invalid:ring-2 invalid:ring-red-400"
-            />
-            {error && <p>{error}</p>}
-
-            <motion.button
-              type="submit"
-              disabled={isDisabled}
-              className={
-                "block col-span-2 mx-4 my-2 px-2 py-2 rounded-md bord " +
-                (!isDisabled
-                  ? "bg-green-600 border-green-600 text-white"
-                  : " border-green-300  text-white  bg-green-300")
-              }
-              whileHover={whileHover}
-              whileTap={whileTap}
-            >
-              Submit
-            </motion.button>
           </form>
-          <p className="ml-36">
-            Already a member?{" "}
-            <Link to="/login" className="underline cursor-pointer">
-              Signin
-            </Link>
-          </p>
-        </div>
-      </div>
-    </div>
+          <div className="mb-4 md:mb-8 flex justify-center items-center ">
+            <p>
+              Already a member?{" "}
+              <Link
+                to="/login"
+                className="underline cursor-pointer hover:text-blue-500 "
+              >
+                Signin
+              </Link>
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
   );
 };
 

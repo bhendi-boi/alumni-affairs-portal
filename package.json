@@ -14,8 +14,10 @@
     "@mui/material": "^5.10.3",
     "formik": "^2.2.9",
     "framer-motion": "^7.2.1",
+    "mui-tel-input": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
