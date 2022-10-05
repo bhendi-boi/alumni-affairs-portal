@@ -1,13 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const user = !null;
   return (
     <>
-      <div className="navbar sticky top-0 bg-base-100 drop-shadow-md">
-        <div
-          className="navbar-start sticky 
-        "
-        >
+      <nav className="navbar sticky top-0 bg-base-100 drop-shadow-md">
+        <div className="navbar-start sticky w-full">
           {/* dropdown  */}
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,10 +30,10 @@ const Navigation = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li tabIndex={0}>
-                <a className="justify-between">
+                <Link to="/community" className="justify-between">
                   Community
                   <svg
                     className="fill-current"
@@ -45,117 +44,68 @@ const Navigation = () => {
                   >
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
-                </a>
-                <ul class="menu bg-base-100 w-56 rounded-box">
-                  <li class="hover-bordered">
+                </Link>
+                <ul className="menu bg-base-100 w-56 rounded-box">
+                  <li className="hover-bordered">
                     <a>COMPUTER SCIENCE</a>
                   </li>
-                  <li class="hover-bordered">
+                  <li className="hover-bordered">
                     <a>ELECTRONICS</a>
                   </li>
-                  <li class="hover-bordered">
+                  <li className="hover-bordered">
                     <a>MECHANICAL</a>
                   </li>
-                  <li class="hover-bordered">
+                  <li className="hover-bordered">
                     <a>SMART MANUFACTURING</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a>Gallery</a>
+                <Link to="/gallery">Gallery</Link>
               </li>
               <li>
-                <a>Join Us</a>
+                <Link to="/signup">Join Us</Link>
               </li>
               <li>
                 <a>Jobs/Mentoring</a>
               </li>
               <li>
-                <a>Events</a>
+                <Link to="/events">Events</Link>
               </li>
               <li>
-                <a>Contact</a>
+                <Link to="/contact-us">Contact</Link>
               </li>
             </ul>
           </div>
           {/* logo starts */}
           <div className="flex align-center">
             <div>
-              <div class="w-36 rounded">
-                <img
-                  className=" "
-                  src="https://www.iiitdm.ac.in/img/BrandBook/SecondaryLogo.png"
-                />
+              <div className="w-36 rounded">
+                <a href="http://www.iiitdm.ac.in" target="_blank">
+                  <img src="https://www.iiitdm.ac.in/img/BrandBook/SecondaryLogo.png" />
+                </a>
               </div>
             </div>
-            <a className=" my-3   text-cornflower-blue wrap text-left text-2xl normal-case text-xl">
+            <Link
+              to="/"
+              className=" my-3 text-cornflower-blue wrap text-left  normal-case text-xl"
+            >
               ALUMNI PORTAL
-            </a>
+            </Link>
           </div>
           {/* logo ends
            */}
         </div>
-        <div className="navbar-center hidden sticky lg:flex">
-          <ul className="menu menu-horizontal  p-0">
-            <li>
-              <a>Home</a>
-            </li>
-            <li tabIndex={0} z-50>
-              <a className="z-50">
-                Community
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </a>
-              <ul class="menu bg-base-100 w-56 rounded-box ">
-                <li class="hover-bordered">
-                  <a>COMPUTER SCIENCE</a>
-                </li>
-                <li class="hover-bordered">
-                  <a>ELECTRONICS</a>
-                </li>
-                <li class="hover-bordered ">
-                  <a>MECHANICAL</a>
-                </li>
-                <li class="hover-bordered">
-                  <a>SMART MANUFACTURING</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Forum</a>
-            </li>
-            <li>
-              <a>Gallery</a>
-            </li>
-            <li>
-              <a>Join Us</a>
-            </li>
-            <li>
-              <a>Jobs/Mentoring</a>
-            </li>
-            <li>
-              <a>Events</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
-          </ul>
-        </div>
         {/* get started */}
-        <div className="">
-          <a className="btn btn-outline mx-2 px-6">LOGIN</a>
+        <div className={user ? "hidden" : ""}>
+          <Link to="/login" className="btn btn-outline mx-2 px-6">
+            Login
+          </Link>
         </div>
         {/* avatar */}
-        <div className="dropdown dropdown-end mx-5">
+        <div className={(user ? "" : "hidden") + " dropdown dropdown-end mx-5"}>
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-20 rounded-xl">
+            <div className="w-20 rounded-full">
               <img src="https://placeimg.com/80/80/people" />
             </div>
           </label>
@@ -178,7 +128,7 @@ const Navigation = () => {
           </ul>
         </div>
         {/* avatar ends */}
-      </div>
+      </nav>
     </>
   );
 };

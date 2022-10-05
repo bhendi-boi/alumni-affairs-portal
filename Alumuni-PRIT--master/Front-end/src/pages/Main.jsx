@@ -1,4 +1,3 @@
-import * as React from "react";
 import Hero from "../components/MainComponents/Hero";
 import Questions from "../components/MainComponents/Questions";
 import Navigation from "../components/Navigation";

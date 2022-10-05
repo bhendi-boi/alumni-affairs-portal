@@ -1,11 +1,17 @@
 import React from "react";
 
 const Questions = () => {
+  const handleClick = () => {
+    console.log("clicked");
+  };
   return (
     <>
       {/* tabs sections */}
       <div className="tabs text-2xl p-2 bg-accent">
-        <a className="tab tab-bordered text-xl px-7 tab-active" onClick={""}>
+        <a
+          className="tab tab-bordered text-xl px-7 tab-active"
+          onClick={handleClick}
+        >
           Recent Questions
         </a>
         <a className="tab tab-bordered  text-xl px-7">Most Answered</a>
