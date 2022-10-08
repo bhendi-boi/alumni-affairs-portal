@@ -6,7 +6,7 @@ import SubmitButton from "../components/SubmitButton";
 
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
-import iiitdmLogo from "../assets/iiitdmLogo.png";
+import alumniLogo from "../assets/logo.png";
 
 const Login = () => {
   const [data, setData] = useLocalStorageState("loginData", {
@@ -15,7 +15,6 @@ const Login = () => {
   });
   const error = useLocalStorageState("loginError", "password donot match");
   const [isDisabled, setIsDisabled] = useState(true);
-  console.log(data);
 
   // helper functions
   const validateData = () => {
@@ -32,7 +31,6 @@ const Login = () => {
     } else {
       setData((prev) => ({ ...prev, password: `${e.target.value}` }));
     }
-    console.log(data.password.length);
     validateData();
   };
 
@@ -63,11 +61,11 @@ const Login = () => {
   };
 
   return (
-    <main className="h-screen w-screen flex justify-center items-center bg-slate-200">
+    <main className="h-[calc(100vh-4rem)] bg-zinc-700 w-full flex justify-center items-center ">
       <div className="w-[80%] h-[80%] flex flex-col items-center justify-center">
         <section className="h-[80%] w-[80%] flex flex-col flex-grow sm:flex-row md:flex-grow-0 bg-white shadow-xl rounded-2xl">
           <div className="w-full h-[200px]  sm:h-full sm:w-[40%] border flex  bg-sky-200 p-10">
-            <img src={iiitdmLogo} alt="logo" className="self-center" />
+            <img src={alumniLogo} alt="logo" className="self-center" />
           </div>
           <div className="w-full sm:w-[60%] h-full">
             <form

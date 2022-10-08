@@ -98,14 +98,18 @@ const SignUp = () => {
   };
 
   return (
-    <main className="h-screen w-screen flex justify-center items-center">
-      <section className="w-screen sm:w-[90%] md:w-[80%] sm:h-[90%] md:h-[80%]  border-2 shadow-2xl flex flex-col  sm:flex-row rounded-2xl">
-        <section className="w-full h-[300px] sm:h-full sm:w-[40%] flex sm:justify-center sm:items-center p-10">
-          <img src={iiitdmLogo} alt="alumni portal logo" className="rounded" />
+    <main className="min-h-[calc(100vh-4rem)] flex justify-center items-center">
+      <section className="w-full h-full sm:w-[90%] md:w-[80%] sm:h-[90%]  sm:border-2 sm:shadow-2xl flex flex-col  sm:flex-row sm:rounded-2xl">
+        <section className="h-full sm:w-[40%] flex p-10">
+          <img
+            src={iiitdmLogo}
+            alt="alumni portal logo"
+            className="self-center scale-75 sm:scale-100 w-full"
+          />
         </section>
         <section className="w-full sm:w-[60%] flex flex-col justify-between">
-          <p className="self-center">
-            Create your account by filling the form below
+          <p className="self-center text-lg text-slate-600">
+            Tell us about your self
           </p>
           <form
             className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2 content-center"
@@ -160,19 +164,16 @@ const SignUp = () => {
                 className={inputClassName}
               />
             </div>
-            <div className="w-[85%] col-span-2 sm:col-span-1 mx-auto sm:mx-4  px-2 py-2 ">
-              <FormControl>
+            <div className="mx-auto col-span-2 sm:col-span-1">
+              <FormControl className="px-2 py-3">
                 <InputLabel htmlFor="branch" className="mt-2">
                   Branch
                 </InputLabel>
                 <NativeSelect onChange={handleChange} name="branch" id="branch">
-                  <option value={"EC"}>Electronics</option>
-                  <option value={"CS"}>Computer Science</option>
-                  <option value={"CSAI"}>
-                    Computer Science with major in AI
-                  </option>
-                  <option value={"ME"}>Mechanical</option>
-                  <option value={"SM"}>Smart Manufacturing</option>
+                  <option value={"ec"}>Electronics</option>
+                  <option value={"cs"}>Computer Science</option>
+                  <option value={"me"}>Mechanical</option>
+                  <option value={"sm"}>Smart Manufacturing</option>
                 </NativeSelect>
               </FormControl>
             </div>
@@ -216,10 +217,7 @@ const SignUp = () => {
           <div className="mb-4 md:mb-8 flex justify-center items-center ">
             <p>
               Already a member?{" "}
-              <Link
-                to="/login"
-                className="underline cursor-pointer hover:text-blue-500 "
-              >
+              <Link to="/login" className="cursor-pointer text-blue-600">
                 Signin
               </Link>
             </p>
