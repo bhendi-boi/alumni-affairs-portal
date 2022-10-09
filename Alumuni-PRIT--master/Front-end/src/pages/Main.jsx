@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <main className="min-h-[calc(100vh-4rem)]">
       <Hero />
-      <div className=" grid grid-cols-8 mx-32 my-10 overflow-hidden">
+      <div className=" grid grid-cols-8 mx-32 my-10 ">
         <div className="col-span-6 ">
           <Questions />
         </div>

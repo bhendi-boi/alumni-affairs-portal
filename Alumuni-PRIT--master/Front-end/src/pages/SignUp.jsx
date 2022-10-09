@@ -10,7 +10,7 @@ import NativeSelect from "@mui/material/NativeSelect";
 
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
-import iiitdmLogo from "../assets/iiitdmLogo.png";
+import iiitdmLogo from "../assets/iiitdm.png";
 //
 const SignUp = () => {
   // state

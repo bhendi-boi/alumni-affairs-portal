@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import primaryLogo from "../assets/alumniPortalRectangle.png";
-import iiitdmLogo from "../assets/iiitdmLogo.png";
+import primaryLogo from "../assets/aa_logo.png";
+import iiitdmLogo from "../assets/iiitdm.jpg";
 
 const Navigation = () => {
   const [user, setUser] = useState(null);
@@ -15,7 +15,7 @@ const Navigation = () => {
   const inputClassName =
     "w-full p-3 rounded-md text-gray-600 ring-2 ring-sky-300 transition duration-300 focus:ring-blue-600 focus:outline-none invalid:ring-red-600";
   return (
-    <nav className="navbar sticky flex items-center top-0 bg-base-100 h-16 drop-shadow-md">
+    <nav className="navbar sticky flex items-center top-0 bg-base-100 h-16 w-screen drop-shadow-md">
       <div className="navbar-start sticky w-full ">
         {/* dropdown  */}
         <div className="dropdown lg:hidden">
@@ -85,22 +85,26 @@ const Navigation = () => {
             <li>
               <Link to="/contact-us">Contact</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </div>
         {/* dropdown ends */}
         {/* logo starts */}
-        <div className="flex flex-row align-center gap-4">
+        <div className="flex flex-row items-center gap-2">
           <div>
-            <div className="w-12 rounded">
+            <div className="w-14 rounded">
               <a href="http://www.iiitdm.ac.in" target="_blank">
                 <img className="w-full" src={iiitdmLogo} />
               </a>
             </div>
           </div>
+          <p className="text-sm">x</p>
           <div>
-            <div className="w-36 rounded">
+            <div className="w-14 rounded">
               <Link to="/">
-                <img src={primaryLogo} />
+                <img className="w-full" src={primaryLogo} />
               </Link>
             </div>
           </div>
@@ -120,17 +124,19 @@ const Navigation = () => {
           />
         </div>
         {/* get started */}
-        <div className={user ? "hidden" : "" + " "}>
+        <div className={user ? "hidden" : "" + " hidden xs:block"}>
           <button
             onClick={() => setUser("sjk")}
-            className="btn btn-outline sm:mx-2 sm:px-6 self-end"
+            className="btn btn-outline mx-2 sm:px-6 self-end"
           >
             Login
           </button>
         </div>
         {/* avatar */}
         <div
-          className={(user ? "" : "hidden") + " dropdown dropdown-end self-end"}
+          className={
+            (user ? "" : "hidden") + " dropdown dropdown-end mx-3 self-end"
+          }
         >
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-20 rounded-full">

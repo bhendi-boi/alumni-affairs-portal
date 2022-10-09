@@ -6,7 +6,7 @@ import SubmitButton from "../components/SubmitButton";
 
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
-import alumniLogo from "../assets/logo.png";
+import alumniLogo from "../assets/aa_logo.png";
 
 const Login = () => {
   const [data, setData] = useLocalStorageState("loginData", {
@@ -61,18 +61,19 @@ const Login = () => {
   };
 
   return (
-    <main className="h-[calc(100vh-4rem)] bg-zinc-700 w-full flex justify-center items-center ">
-      <div className="w-[80%] h-[80%] flex flex-col items-center justify-center">
-        <section className="h-[80%] w-[80%] flex flex-col flex-grow sm:flex-row md:flex-grow-0 bg-white shadow-xl rounded-2xl">
-          <div className="w-full h-[200px]  sm:h-full sm:w-[40%] border flex  bg-sky-200 p-10">
-            <img src={alumniLogo} alt="logo" className="self-center" />
+    <main className="min-h-[calc(100vh-4rem)] bg-white w-full flex justify-center items-center overflow-hidden">
+      <div className="w-full h-full sm:w-[80%] sm:h-[80%] flex flex-col items-center justify-center">
+        <section className="h-full w-full sm:h-[90%] sm:w-[80%] flex flex-col sm:flex-row  sm:shadow-xl sm:rounded-2xl">
+          {/* image-container */}
+          <div className="w-full h-full sm:w-[40%] flex items-center p-5">
+            <img src={alumniLogo} alt="alumni-logo" className="block" />
           </div>
           <div className="w-full sm:w-[60%] h-full">
             <form
               className="space-y-4 w-full flex flex-col justify-center items-center"
               onSubmit={handleSubmit}
             >
-              <p className="self-center pt-4  sm:pt-8">
+              <p className="self-center pt-4 md:pt-6 lg:pt-8">
                 Login to continue using this site
               </p>
               <div className="w-[85%]">
@@ -94,12 +95,12 @@ const Login = () => {
               </div>
               <div className="w-[85%]  mb-4">
                 <div className="w-full flex items-center justify-between">
-                  <label htmlFor="password" class="text-gray-700">
+                  <label htmlFor="password" className="text-gray-700">
                     Password
                   </label>
                   <button
                     onClick={handleForgotPassword}
-                    className="p-2 mr-2"
+                    className="p-2 sm:mr-2"
                     type="reset"
                   >
                     <span class="text-sm text-gray-700">
