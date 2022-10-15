@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         "cornflower-blue": "#214B8C",
+        error: "rgb(220,38,38)",
       },
     },
   },

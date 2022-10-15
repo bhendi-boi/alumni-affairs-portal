@@ -28,7 +28,7 @@ const SignUp = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(!true);
   const [phoneNumber, setPhoneNumber] = useState("");
 
   // variables
@@ -50,6 +50,8 @@ const SignUp = () => {
       setError("Password too short");
     } else if (formData.password !== confirmPassword) {
       setError("Passwords donot match");
+      setConfirmPassword("");
+      setFormData((prev) => ({ ...prev, password: "" }));
     } else {
       setError("");
     }
@@ -108,7 +110,7 @@ const SignUp = () => {
           />
         </section>
         <section className="w-full sm:w-[60%] flex flex-col justify-between">
-          <p className="self-center text-lg text-slate-600">
+          <p className="self-center my-2 text-lg text-slate-600">
             Tell us about your self
           </p>
           <form
@@ -197,6 +199,7 @@ const SignUp = () => {
                 }}
                 type="password"
                 name="confirmPassword"
+                value={confirmPassword}
                 placeholder="Confirm password*"
                 required
                 className="w-[85%] block sm:w-[90%]  col-span-2 mx-auto sm:mx-6 my-2 px-2 pr-4  py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300
@@ -205,8 +208,8 @@ const SignUp = () => {
               />
             </div>
             {error && (
-              <div className="flex justify-center items-center">
-                <p>{error}</p>
+              <div className="flex justify-start mx-6 px-4 items-center">
+                <p className="text-error text-base">{error}</p>
               </div>
             )}
             <SubmitButton

@@ -4,21 +4,17 @@ import { Link } from "react-router-dom";
 import primaryLogo from "../assets/aa_logo.png";
 import iiitdmLogo from "../assets/iiitdm.jpg";
 
+// context
+import { useUserContext } from "../context/UserContext";
+
 const Navigation = () => {
-  const [user, setUser] = useState(null);
-  // const [navIsOpen, setNavIsOpen] = useState(false);
+  const { user, login, logout } = useUserContext();
 
-  // const toggleNavbar = () => {
-  //   setNavIsOpen((prev) => !prev);
-  // };
-
-  const inputClassName =
-    "w-full p-3 rounded-md text-gray-600 ring-2 ring-sky-300 transition duration-300 focus:ring-blue-600 focus:outline-none invalid:ring-red-600";
   return (
-    <nav className="navbar sticky flex items-center top-0 bg-base-100 h-16 w-screen drop-shadow-md">
+    <nav className="navbar sticky flex items-center top-0 z-100 bg-base-100 h-16 w-screen drop-shadow-md">
       <div className="navbar-start sticky w-full ">
         {/* dropdown  */}
-        <div className="dropdown lg:hidden">
+        <div className="dropdown md:hidden">
           <label tabIndex={0} className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,14 +81,19 @@ const Navigation = () => {
             <li>
               <Link to="/contact-us">Contact</Link>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+            {user ? (
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
-        {/* dropdown ends */}
         {/* logo starts */}
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-2 md:ml-4">
           <div>
             <div className="w-14 rounded">
               <a href="http://www.iiitdm.ac.in" target="_blank">
@@ -112,56 +113,88 @@ const Navigation = () => {
         {/* logo ends*/}
       </div>
       {/* navbar-start ends */}
-      <div className="navbar-end w-full sm:justify-between items-center flex">
-        <div className="w-full hidden sm:block">
-          <input
-            className={
-              (user ? "" : "hidden") +
-              " w-full px-4 py-2 border border-slate-500 text-lg rounded-md  input-bordered"
-            }
-            placeholder="Ask your question here ..... "
-            type="text"
-          />
+      <div className="w-full justify-end md:justify-between flex items-center">
+        <div className="hidden md:flex">
+          <div className="flex-none">
+            <ul className="menu menu-horizontal p-0">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li tabIndex={0}>
+                <Link to="/community">
+                  Community
+                  <svg
+                    className="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                  </svg>
+                </Link>
+                <ul className="p-2 bg-base-100">
+                  <li>
+                    <Link to="/community/cs">Comuter Science</Link>
+                  </li>
+                  <li>
+                    <Link to="/community/ec">Electronics</Link>
+                  </li>
+                  <li>
+                    <Link to="/community/me">Mechanical</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="/gallery">Gallery</Link>
+              </li>
+              <li>
+                <Link to="/events">Events</Link>
+              </li>
+              <li>
+                <Link to="/contact-us">Contact</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/* get started */}
-        <div className={user ? "hidden" : "" + " hidden xs:block"}>
-          <button
-            onClick={() => setUser("sjk")}
-            className="btn btn-outline mx-2 sm:px-6 self-end"
-          >
-            Login
-          </button>
-        </div>
-        {/* avatar */}
-        <div
-          className={
-            (user ? "" : "hidden") + " dropdown dropdown-end mx-3 self-end"
-          }
-        >
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-20 rounded-full">
-              <img src="https://placeimg.com/80/80/people" />
+        <div className="hidden xs:block">
+          {!user && (
+            <button
+              onClick={() => login()}
+              className="btn btn-outline mx-2 sm:px-6 self-end"
+            >
+              Login
+            </button>
+          )}
+          {user && (
+            <div className="dropdown dropdown-end mx-3">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-20 rounded-full">
+                  <img src="https://placeimg.com/80/80/people" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/profile" className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                  </Link>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <button onClick={() => logout()}>Logout</button>
+                </li>
+              </ul>
             </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <Link to="/profile" className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </Link>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <button onClick={() => setUser(null)}>Logout</button>
-            </li>
-          </ul>
+          )}
         </div>
       </div>
+      {/* get started */}
     </nav>
   );
 };

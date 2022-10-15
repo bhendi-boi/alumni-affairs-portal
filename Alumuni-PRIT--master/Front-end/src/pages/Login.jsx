@@ -103,7 +103,7 @@ const Login = () => {
                     className="p-2 sm:mr-2"
                     type="reset"
                   >
-                    <span class="text-sm text-gray-700">
+                    <span className="text-sm text-gray-700">
                       Forgot your password ?
                     </span>
                   </button>
@@ -122,8 +122,8 @@ const Login = () => {
                 />
               </div>
               {!error && (
-                <div className={"text-gray-600"}>
-                  <p>{error}</p>
+                <div>
+                  <p className="text-error">{error}</p>
                 </div>
               )}
               <div className="block w-[85%] pt-4">
