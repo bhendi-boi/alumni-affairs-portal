@@ -35,7 +35,6 @@ const AnimatedRoutes = () => {
               </ProtectedRoute>
             }
           />
-
           <Route path="signup" element={<SignUp />} />
           <Route path="community">
             <Route index element={<Community />} />

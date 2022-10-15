@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // components and styles
 import PhoneInput from "../components/PhoneInput";
@@ -14,6 +15,7 @@ import iiitdmLogo from "../assets/iiitdm.png";
 //
 const SignUp = () => {
   // state
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useLocalStorageState("signInData", {
     username: "",
@@ -24,8 +26,6 @@ const SignUp = () => {
     rollNo: "",
     phoneNumber: null,
   });
-  console.log(formData.phoneNumber);
-
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isDisabled, setIsDisabled] = useState(!true);
@@ -66,7 +66,10 @@ const SignUp = () => {
     } else if (e.target.name === "emailId") {
       setFormData((prev) => ({ ...prev, email: `${e.target.value}` }));
     } else if (e.target.name === "linkedInProfileName") {
-      setFormData((prev) => ({ ...prev, rollNo: `${e.target.value}` }));
+      setFormData((prev) => ({
+        ...prev,
+        linkedInProfileName: `${e.target.value}`,
+      }));
     } else if (e.target.name === "password") {
       setFormData((prev) => ({ ...prev, password: `${e.target.value}` }));
     } else if (e.target.name === "branch") {

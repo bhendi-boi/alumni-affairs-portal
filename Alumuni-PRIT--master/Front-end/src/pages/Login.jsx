@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 // components
 import SubmitButton from "../components/SubmitButton";
@@ -15,6 +16,7 @@ const Login = () => {
   });
   const error = useLocalStorageState("loginError", "password donot match");
   const [isDisabled, setIsDisabled] = useState(true);
+  const navigate = useNavigate();
 
   // helper functions
   const validateData = () => {
@@ -39,8 +41,8 @@ const Login = () => {
     try {
       const url = "http://localhost:8001/Login";
       const { data: res } = await axios.post(url, {
-        email: Email,
-        password: password,
+        email: data.email,
+        password: data.password,
       });
       console.log(res);
       navigate("/");
@@ -53,7 +55,7 @@ const Login = () => {
         console.log(error.response.data.message);
       }
     }
-    // ? send a post request to backend
+    console.log("dm");
   };
 
   const handleForgotPassword = () => {
@@ -71,7 +73,7 @@ const Login = () => {
           <div className="w-full sm:w-[60%] h-full">
             <form
               className="space-y-4 w-full flex flex-col justify-center items-center"
-              onSubmit={handleSubmit}
+              onSubmit={(e) => handleSubmit(e)}
             >
               <p className="self-center pt-4 md:pt-6 lg:pt-8">
                 Login to continue using this site
@@ -128,7 +130,7 @@ const Login = () => {
               )}
               <div className="block w-[85%] pt-4">
                 <SubmitButton
-                  isDisabled={isDisabled}
+                  isDisabled={false}
                   className={"block w-full h-10 "}
                 />
               </div>
