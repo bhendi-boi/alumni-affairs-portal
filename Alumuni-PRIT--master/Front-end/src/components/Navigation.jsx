@@ -10,8 +10,8 @@ const Navigation = () => {
   const { user, login, logout } = useUserContext();
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-100 bg-base-100 h-16 w-screen drop-shadow-md">
-      <div className="navbar-start sticky w-full ">
+    <nav className="navbar sticky flex items-center top-0 z-100 bg-base-100 h-16 w-full drop-shadow-md">
+      <div className="navbar-start sticky w-full">
         {/* dropdown  */}
         <div className="dropdown md:hidden">
           <label tabIndex={0} className="btn btn-ghost">
@@ -78,7 +78,7 @@ const Navigation = () => {
               <Link to="/events">Events</Link>
             </li>
             <li>
-              <Link to="/contact-us">Contact</Link>
+              <Link to="/about">About</Link>
             </li>
             {user ? (
               <li>
@@ -112,7 +112,7 @@ const Navigation = () => {
         {/* logo ends*/}
       </div>
       {/* navbar-start ends */}
-      <div className="w-full justify-end md:justify-between flex items-center">
+      <div className="justify-end md:justify-between flex items-center">
         <div className="hidden md:flex">
           <div className="flex-none">
             <ul className="menu menu-horizontal p-0">
@@ -151,7 +151,7 @@ const Navigation = () => {
                 <Link to="/events">Events</Link>
               </li>
               <li>
-                <Link to="/contact-us">Contact</Link>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </div>
