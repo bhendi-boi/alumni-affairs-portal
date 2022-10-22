@@ -7,10 +7,10 @@ import iiitdmLogo from "../assets/iiitdm.jpg";
 import { useUserContext } from "../context/UserContext";
 
 const Navigation = () => {
-  const { user, login, logout } = useUserContext();
+  const { user, logout } = useUserContext();
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-100 bg-base-100 h-16 w-full drop-shadow-md">
+    <nav className="navbar sticky flex items-center top-0 z-10 bg-base-100 h-16 w-full text-xl font-medium drop-shadow-md">
       <div className="navbar-start sticky w-full">
         {/* dropdown  */}
         <div className="dropdown md:hidden">
@@ -158,12 +158,9 @@ const Navigation = () => {
         </div>
         <div className="hidden xs:block">
           {!user && (
-            <button
-              onClick={() => login()}
-              className="btn btn-outline mx-2 sm:px-6 self-end"
-            >
+            <Link to="/login" className="btn btn-outline mx-2 sm:px-6 self-end">
               Login
-            </button>
+            </Link>
           )}
           {user && (
             <div className="dropdown dropdown-end mx-3">

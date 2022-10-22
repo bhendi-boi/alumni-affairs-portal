@@ -63,9 +63,23 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] bg-white w-full flex justify-center items-center overflow-hidden">
-      <div className="w-full h-full sm:w-[80%] sm:h-[80%] flex flex-col items-center justify-center">
-        <section className="h-full w-full sm:h-[90%] sm:w-[80%] flex flex-col sm:flex-row  sm:shadow-xl sm:rounded-2xl">
+    <main className="min-h-[calc(100vh-4rem)] w-full flex justify-center items-center overflow-hidden">
+      <div className="area w-full h-full z-0  absolute top-0 left-0">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div className="w-full h-full sm:w-[80%] sm:h-[80%] z-10 flex flex-col items-center justify-center">
+        <section className="h-full w-full sm:h-[90%] sm:w-[80%] z-10 flex flex-col items-center sm:flex-row  sm:shadow-xl sm:rounded-2xl bg-base-100">
           {/* image-container */}
           <div className="w-full h-full sm:w-[40%] flex items-center p-5">
             <img src={alumniLogo} alt="alumni-logo" className="block" />
@@ -131,7 +145,8 @@ const Login = () => {
               <div className="block w-[85%] pt-4">
                 <SubmitButton
                   isDisabled={false}
-                  className={"block w-full h-10 "}
+                  className={"block w-full h-10"}
+                  text={"Login"}
                 />
               </div>
               <p className="border-t sm:border-none py-4 sm:pt-3 text-sm self-center">

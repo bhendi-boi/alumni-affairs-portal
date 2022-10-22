@@ -1,7 +1,18 @@
-import React from "react";
+import { useState } from "react";
+import Header from "../../components/Header";
 
 const Community = () => {
-  return <div>Community</div>;
+  const [links, setLinks] = useState([
+    { link: "cs", name: "computer science", isActive: false },
+    { link: "ec", name: "eletronics", isActive: false },
+    { link: "me", name: "mechanical", isActive: false },
+  ]);
+
+  return (
+    <main>
+      <Header title={"community"} links={links} setLinks={setLinks} />
+    </main>
+  );
 };
 
 export default Community;

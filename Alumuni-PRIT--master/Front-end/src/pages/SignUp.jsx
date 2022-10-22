@@ -104,7 +104,22 @@ const SignUp = () => {
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex justify-center items-center">
-      <section className="w-full h-full sm:w-[90%] md:w-[80%] sm:h-[90%]  sm:border-2 sm:shadow-2xl flex flex-col  sm:flex-row sm:rounded-2xl">
+      <div className="area w-full h-full z-0  absolute top-0 left-0">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <section className="w-full h-full sm:w-[90%] z-10 bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl">
         <section className="h-full sm:w-[40%] flex p-10">
           <img
             src={iiitdmLogo}
@@ -113,9 +128,7 @@ const SignUp = () => {
           />
         </section>
         <section className="w-full sm:w-[60%] flex flex-col justify-between">
-          <p className="self-center my-2 text-lg text-slate-600">
-            Tell us about your self
-          </p>
+          <p className="self-center my-2 text-xl">Tell us about your self</p>
           <form
             className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2 content-center"
             onSubmit={(e) => handleSubmit(e)}
@@ -218,12 +231,16 @@ const SignUp = () => {
             <SubmitButton
               className={"block col-span-2 mx-4 my-2 p-2 rounded-md"}
               isDisabled={isDisabled}
+              text={"sign up"}
             />
           </form>
-          <div className="mb-4 md:mb-8 flex justify-center items-center ">
+          <div className="mb-4 text-xl flex justify-center items-center ">
             <p>
               Already a member?{" "}
-              <Link to="/login" className="cursor-pointer text-blue-600">
+              <Link
+                to="/login"
+                className="cursor-pointer font-medium text-blue-500 hover:text-blue-600"
+              >
                 Signin
               </Link>
             </p>
