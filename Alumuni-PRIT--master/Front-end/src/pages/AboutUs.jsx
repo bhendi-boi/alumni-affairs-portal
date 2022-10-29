@@ -1,14 +1,14 @@
 import Contact from "../components/Contact";
-import alumniAffairsLogo from "../assets/aa_logo.png";
+import alumniAffairsLogo from "../assets/oldoldlogo_whiteishhhh.png";
 import AboutCard from "../components/AboutCard";
 import Header from "../components/Header";
+import Team from "../components/Team";
 
 const AboutUs = () => {
   return (
-    <main className="min-h[calc(100vh - 4rem)] w-full">
+    <main className="min-h[calc(100vh - 4rem)] w-full bg-base-content text-base-200">
       <Header title={"about us"} />
       <section className="flex flex-col">
-        {/* history and vision */}
         <AboutCard
           title={"History and Vision"}
           logoSrc={alumniAffairsLogo}
@@ -29,12 +29,7 @@ const AboutUs = () => {
           text={["message from the director"]}
         />
       </section>
-      {/* todo: past teams */}
-      <section className="h-96 bg-gray-500">
-        <h3 className="capitalize">the team</h3>
-        <div>images</div>
-      </section>
-      <div className="h-96">empty div</div>
+      <Team />
       <Contact />
     </main>
   );

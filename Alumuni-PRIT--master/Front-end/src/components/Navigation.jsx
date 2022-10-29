@@ -10,7 +10,7 @@ const Navigation = () => {
   const { user, logout } = useUserContext();
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-10 bg-base-100 h-16 w-full text-xl font-medium drop-shadow-md">
+    <nav className="navbar sticky flex items-center top-0 z-10 bg-base-100 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100">
       <div className="navbar-start sticky w-full">
         {/* dropdown  */}
         <div className="dropdown md:hidden">

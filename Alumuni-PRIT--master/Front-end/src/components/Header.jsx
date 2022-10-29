@@ -11,14 +11,17 @@ const Header = ({ title, links, setLinks }) => {
     setLinks(updatedLinks);
   };
   return (
-    <header className="flex items-center h-32">
-      <Link to="" className="text-7xl px-6 py-2 capitalize">
+    <header className="flex items-center h-32 text-white">
+      <Link
+        to=""
+        className="text-5xl  sm:text-7xl px-6 py-2 capitalize font-medium"
+      >
         <h1>{title}</h1>
       </Link>
       {links && (
         <div className="flex gap-6">
           <p className="py-4 text-5xl">❯</p>
-          <ul className="flex gap-8 items-center">
+          <ul className="hidden  md:flex gap-8 items-center">
             {links.map((linkItem) => {
               return (
                 <li key={linkItem.link}>

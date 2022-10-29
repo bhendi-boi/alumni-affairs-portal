@@ -7,7 +7,7 @@ import SubmitButton from "../components/SubmitButton";
 
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
-import alumniLogo from "../assets/aa_logo.png";
+import alumniLogo from "../assets/oldoldlogo_whiteishhhh.png";
 
 const Login = () => {
   const [data, setData] = useLocalStorageState("loginData", {
@@ -15,15 +15,15 @@ const Login = () => {
     password: "",
   });
   const error = useLocalStorageState("loginError", "password donot match");
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(false);
   const navigate = useNavigate();
 
   // helper functions
   const validateData = () => {
     if (data.email !== null && data.password.length > 7) {
-      setIsDisabled(false);
-    } else {
       setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
     }
   };
 
@@ -63,25 +63,14 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] w-full flex justify-center items-center overflow-hidden">
-      <div className="area w-full h-full z-0  absolute top-0 left-0">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-      <div className="w-full h-full sm:w-[80%] sm:h-[80%] z-10 flex flex-col items-center justify-center">
-        <section className="h-full w-full sm:h-[90%] sm:w-[80%] z-10 flex flex-col items-center sm:flex-row  sm:shadow-xl sm:rounded-2xl bg-base-100">
+    <main className="min-h-[calc(100vh-4rem)] w-full flex justify-center items-center bg-base-content overflow-hidden relative">
+      {/* todo: find a good bg */}
+      {/* <div className="login-bg"></div> */}
+
+      <div className="w-full h-full md:w-[80%] md:h-[80%] sm:z-10 flex flex-col items-center justify-center text-white ">
+        <section className="h-full w-full sm:h-[90%] sm:w-[80%] flex flex-col items-center sm:flex-row  sm:shadow-xl sm:rounded-2xl border border-base-content sm:border-[#262c5e] sm:bg-[#262c5e]">
           {/* image-container */}
-          <div className="w-full h-full sm:w-[40%] flex items-center p-5">
+          <div className="w-full h-full sm:w-[40%] flex items-center p-5 sm:border-r">
             <img src={alumniLogo} alt="alumni-logo" className="block" />
           </div>
           <div className="w-full sm:w-[60%] h-full">
@@ -89,17 +78,17 @@ const Login = () => {
               className="space-y-4 w-full flex flex-col justify-center items-center"
               onSubmit={(e) => handleSubmit(e)}
             >
-              <p className="self-center pt-4 md:pt-6 lg:pt-8">
+              <p className="self-center pt-4 md:pt-6 lg:pt-8 text-base xs:text-2xl">
                 Login to continue using this site
               </p>
               <div className="w-[85%]">
-                <label htmlFor="email" className="py-2 block text-gray-700">
+                <label htmlFor="email" className="py-2 block">
                   Email or Username
                 </label>
                 <input
                   className={
-                    "w-full p-2 ring-2 ring-sky-300 rounded-md border border-gray-300 text-gray-600 transition duration-300 focus:ring-2 focus:ring-blue-600 focus:outline-none invalid:ring-2 invalid:ring-red-600" +
-                    (error ? "ring-red-600" : "")
+                    "w-full px-4 py-2 ring-2 rounded-md text-base-content transition duration-300 focus:ring-2 focus:ring-black  focus:outline-none invalid:ring-2 invalid:ring-red-600 " +
+                    (!error ? "ring-red-600" : "")
                   }
                   type="email"
                   name="email"
@@ -111,7 +100,7 @@ const Login = () => {
               </div>
               <div className="w-[85%]  mb-4">
                 <div className="w-full flex items-center justify-between">
-                  <label htmlFor="password" className="text-gray-700">
+                  <label htmlFor="password" className="">
                     Password
                   </label>
                   <button
@@ -119,14 +108,12 @@ const Login = () => {
                     className="p-2 sm:mr-2"
                     type="reset"
                   >
-                    <span className="text-sm text-gray-700">
-                      Forgot your password ?
-                    </span>
+                    <span className="text-sm">Forgot your password ?</span>
                   </button>
                 </div>
                 <input
                   className={
-                    "w-full p-2 ring-2 ring-sky-300 rounded-md border border-gray-300 text-gray-600 transition duration-300 focus:ring-2 focus:ring-blue-600 focus:outline-none invalid:ring-2 invalid:ring-red-600" +
+                    "w-full px-4 py-2 rounded-md  text-base-content transition duration-300 focus:ring-2 focus:ring-black focus:outline-none invalid:ring-2 invalid:ring-red-600 " +
                     (error ? "ring-red-600" : "")
                   }
                   type="password"
@@ -144,17 +131,14 @@ const Login = () => {
               )}
               <div className="block w-[85%] pt-4">
                 <SubmitButton
-                  isDisabled={false}
+                  isDisabled={isDisabled}
                   className={"block w-full h-10"}
                   text={"Login"}
                 />
               </div>
-              <p className="border-t sm:border-none py-4 sm:pt-3 text-sm self-center">
+              <p className="border-t sm:border-none py-4 sm:pt-3 text-base self-center">
                 Don't have an account ?{" "}
-                <Link
-                  to="/signup"
-                  className="text-sky-500 hover:opacity-70 hover:text-blue-900"
-                >
+                <Link to="/signup" className="text-sky-600 hover:opacity-75">
                   Sign up
                 </Link>
               </p>

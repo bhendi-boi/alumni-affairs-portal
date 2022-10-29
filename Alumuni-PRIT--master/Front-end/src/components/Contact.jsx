@@ -15,9 +15,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full h-96 flex bg-pink-200">
-      <div className="w-[50%] border-r px-6">
-        <h5 className="text-3xl py-4">Contact Info</h5>
+    <div className="w-full flex flex-col sm:flex-row">
+      <div className="sm:w-[50%] sm:border-r px-6">
+        <h5 className="text-3xl sm:text-5xl py-4">Contact Info</h5>
         <div className="px-2 py-2 text-lg">
           <h6 className="text-xl">Professor In Charge</h6>
           <p>Dr. </p>
@@ -61,10 +61,10 @@ const Contact = () => {
         </div>
       </div>
       <form
-        className="w-[50%] px-6 flex flex-col"
+        className="sm:w-[50%] px-6 flex flex-col"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <p className="text-3xl mx-4 mt-4 ">Reach out!!!</p>
+        <p className="text-3xl mx-4 mt-4 sm:text-5xl">Reach out!!!</p>
         <input
           className="block mx-6 my-2 bg-transparent text-gray-700 text-lg px-4 py-2 border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
           type="text"
@@ -93,11 +93,8 @@ const Contact = () => {
           placeholder="Message*"
           name="message"
         />
-        <button
-          type="submit"
-          className="w-[20%] self-end mx-6 my-4 p-2 bg-blue-600 text-slate-50 border-2 rounded-md border-pink-200"
-        >
-          Submit
+        <button type="submit" className="btn btn-primary my-4 self-end">
+          Send
         </button>
       </form>
     </div>
