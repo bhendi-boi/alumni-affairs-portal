@@ -104,21 +104,6 @@ const SignUp = () => {
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex justify-center items-center">
-      <div className="area w-full h-full z-0  absolute top-0 left-0">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-
       <section className="w-full h-full sm:w-[90%] z-10 bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl">
         <section className="h-full sm:w-[40%] flex p-10">
           <img

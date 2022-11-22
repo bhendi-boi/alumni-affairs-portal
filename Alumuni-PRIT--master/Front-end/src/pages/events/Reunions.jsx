@@ -1,7 +1,13 @@
-import React from "react";
-
+import Header from "./components/Header";
 const Reunions = () => {
-  return <div>Reunions</div>;
+  const title = "reunions";
+  const text = ["reunions summary"];
+
+  return (
+    <main className="min-h-screen">
+      <Header title={title} text={text} />
+    </main>
+  );
 };
 
 export default Reunions;

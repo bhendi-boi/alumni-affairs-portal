@@ -1,23 +1,20 @@
-import {
-  FiLink2,
-  FiMail,
-  FiInstagram,
-  FiYoutube,
-  FiLinkedin,
-} from "react-icons/fi";
+import { BsLinkedin, BsInstagram, BsYoutube, BsLink } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
+import { motion } from "framer-motion";
 //
 const Contact = () => {
   const alumniPortalDomian = "alumniaffairs.iiitdm.ac.in";
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("kjcn");
   };
 
   return (
     <div className="w-full flex flex-col sm:flex-row">
       <div className="sm:w-[50%] sm:border-r px-6">
-        <h5 className="text-3xl sm:text-5xl py-4">Contact Info</h5>
+        <h5 className="text-3xl sm:text-5xl py-4 section-title">
+          Contact Info
+        </h5>
         <div className="px-2 py-2 text-lg">
           <h6 className="text-xl">Professor In Charge</h6>
           <p>Dr. </p>
@@ -33,29 +30,34 @@ const Contact = () => {
         <div className="px-2 mt-10">
           <ul className="flex gap-4">
             <li>
-              <a href={"https:" + `${alumniPortalDomian}`}>
-                <FiLink2 size={36} />
-              </a>
+              <motion.a href={"https:" + `${alumniPortalDomian}`}>
+                <BsLink className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+              </motion.a>
             </li>
             <li>
               <a href="mailto:alumniaffairs@iiitdm.ac.in">
-                <FiMail size={36} />
+                <SiGmail className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/alumniaffairsiiitdm/">
-                <FiInstagram size={36} />
+                <BsInstagram className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/company/alumni-affairs-iiitdm/">
-                <FiLinkedin size={36} />
+                <BsLinkedin className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
               </a>
             </li>
             <li>
-              <a href="https://www.youtube.com/channel/UCYIVsibOwxldwfDLtkhQlZQ/">
-                <FiYoutube size={36} />
-              </a>
+              <motion.a
+                href="https://www.youtube.com/channel/UCYIVsibOwxldwfDLtkhQlZQ/"
+                whileHover={{ scale: 1.1 }}
+                animate={{ duration: 2 }}
+                className="bg-white w-14"
+              >
+                <BsYoutube className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out;" />
+              </motion.a>
             </li>
           </ul>
         </div>
@@ -64,7 +66,9 @@ const Contact = () => {
         className="sm:w-[50%] px-6 flex flex-col"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <p className="text-3xl mx-4 mt-4 sm:text-5xl">Reach out!!!</p>
+        <p className="text-3xl mx-4 mt-4 sm:text-5xl section-title">
+          Reach out!!!
+        </p>
         <input
           className="block mx-6 my-2 bg-transparent text-gray-700 text-lg px-4 py-2 border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
           type="text"
@@ -93,7 +97,10 @@ const Contact = () => {
           placeholder="Message*"
           name="message"
         />
-        <button type="submit" className="btn btn-primary my-4 self-end">
+        <button
+          type="submit"
+          className="btn btn-primary btn-outline my-4 mx-2  self-center sm:self-end"
+        >
           Send
         </button>
       </form>

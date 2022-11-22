@@ -1,7 +1,13 @@
-import React from "react";
+import Header from "./components/Header";
 
 const Others = () => {
-  return <div>Others</div>;
+  const title = "others";
+  const text = ["others section"];
+  return (
+    <main className="min-h-screen">
+      <Header title={title} text={text} />
+    </main>
+  );
 };
 
 export default Others;

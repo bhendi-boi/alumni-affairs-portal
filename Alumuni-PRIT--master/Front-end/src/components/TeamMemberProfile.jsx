@@ -1,14 +1,24 @@
-import { FiMail } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
 import { motion } from "framer-motion";
 
-const TeamMemberProfile = ({ name, emailId, imageURL, post }) => {
+/* 
+  use this component to display a person's profile
+  props: 
+        name = a string which is person's name
+        imageURL = image source relative to parent component
+        emailId = person's email id
+        post = persons post
+*/
+
+const TeamMemberProfile = ({ name, emailId, linkedIn, imageURL, post }) => {
   return (
-    <div className="card sm:w-80 bg-base-100 shadow-xl text-2xl text-base-content">
+    <div className="card sm:w-80 bg-base-100 mx-6 my-4 shadow-xl text-2xl text-base-content">
       <figure className="px-10 pt-10">
         <img
           src="https://placeimg.com/400/225/arch"
-          alt="Shoes"
+          alt="team member image"
           className="rounded-xl"
         />
       </figure>
@@ -16,10 +26,20 @@ const TeamMemberProfile = ({ name, emailId, imageURL, post }) => {
         <h2 className="card-title capitalize">{post}</h2>
         <p>{name}</p>
         <div className="flex justify-center gap-4 w-full h-10">
-          <motion.a href={"mailto:" + emailId} whileHover={{ scale: 1.1 }}>
-            <FiMail size={30} />
+          <motion.a
+            href={"mailto:" + emailId}
+            whileTap={{ scale: 0.96 }}
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer"
+          >
+            <SiGmail size={30} />
           </motion.a>
-          <motion.a href="" whileHover={{ scale: 1.1 }}>
+          <motion.a
+            href={linkedIn}
+            whileTap={{ scale: 0.96 }}
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer"
+          >
             <FaLinkedinIn size={30} />
           </motion.a>
         </div>

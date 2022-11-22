@@ -1,4 +1,13 @@
-const AboutCard = ({ title, text, logoSrc, reverse }) => {
+/* 
+  use this component to display a card of info about Alumni Affairs
+  props: 
+        title = a string 
+        text = an array of strings and each array element is treated as a seperate paragraph
+        logo = image source relative to parent component
+        reverse = an optional prop to reverse the apperance of logo and text
+*/
+
+const AboutCard = ({ title, text, imageURL, reverse }) => {
   return (
     <div
       className={
@@ -11,13 +20,13 @@ const AboutCard = ({ title, text, logoSrc, reverse }) => {
           {title}
         </h3>
         <img
-          src={logoSrc}
+          src={imageURL}
           alt="alumni affairs logo"
           className="object-contain p-6"
         />
       </div>
       <div className="w-full sm:w-[70%]">
-        <h3 className="hidden sm:inline mx-6 md:mx-12 mt-4 mb-8 text-5xl">
+        <h3 className="hidden sm:inline mx-6 md:mx-12 mt-4 mb-8 text-5xl section-title">
           {title}
         </h3>
         {text.map((paragraph) => {

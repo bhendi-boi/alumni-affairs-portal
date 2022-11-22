@@ -1,7 +1,13 @@
-import React from "react";
+import Header from "./components/Header";
 
 const Convocation = () => {
-  return <div>Convocation</div>;
+  const title = "convocation";
+  const text = ["convocation summary"];
+  return (
+    <main className="min-h-screen">
+      <Header title={title} text={text} />
+    </main>
+  );
 };
 
 export default Convocation;

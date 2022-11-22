@@ -1,7 +1,14 @@
-import React from "react";
+import Header from "./components/Header";
 
 const AlumniMeets = () => {
-  return <div>AlumniMeets</div>;
+  const title = "alumni meets";
+  const text = ["alumni meets summary"];
+
+  return (
+    <main className="min-h-screen">
+      <Header text={text} title={title} />
+    </main>
+  );
 };
 
 export default AlumniMeets;

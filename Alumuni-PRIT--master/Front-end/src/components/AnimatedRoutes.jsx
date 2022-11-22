@@ -42,8 +42,7 @@ const AnimatedRoutes = () => {
             }
           />
           <Route path="signup" element={<SignUp />} />
-          <Route path="community">
-            <Route index element={<Community />} />
+          <Route path="community" element={<Community />}>
             <Route path="ec" element={<CommunitynityBranchEC />} />
             <Route path="sm" element={<CommunitynityBranchSM />} />
             <Route path="me" element={<CommunitynityBranchME />} />
