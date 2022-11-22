@@ -9,7 +9,7 @@ import Profile from "../pages/Profile";
 import Error from "../pages/Error";
 import Events from "../pages/events/Events";
 import Gallery from "../pages/Gallery";
-import AboutUs from "../pages/AboutUs";
+import AboutUs from "../pages/aboutUs/AboutUs";
 import Community from "../pages/community/Community";
 import CommunitynityBranchEC from "../pages/community/CommunityBranchEC";
 import CommunitynityBranchCS from "../pages/community/CommunityBranchCS";

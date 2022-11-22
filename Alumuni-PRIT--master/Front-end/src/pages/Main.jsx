@@ -1,5 +1,5 @@
-import Hero from "../components/MainComponents/Hero";
-import Questions from "../components/MainComponents/Questions";
+import Hero from "../components/user/Hero";
+import Questions from "../components/user/Questions";
 
 const Main = () => {
   return (

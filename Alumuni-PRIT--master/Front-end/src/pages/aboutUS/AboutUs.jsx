@@ -1,8 +1,10 @@
-import Contact from "../components/Contact";
-import alumniAffairsLogo from "../assets/oldoldlogo_whiteishhhh.png";
-import AboutCard from "../components/AboutCard";
-import Header from "../components/Header";
-import Team from "../components/Team";
+import Contact from "./components/Contact";
+import AboutCard from "./components/AboutCard";
+import Header from "/src/components/Header";
+import Team from "./components/Team";
+
+// img
+import alumniAffairsLogo from "/src/assets/oldoldlogo_whiteishhhh.png";
 
 const AboutUs = () => {
   // todo?
@@ -10,6 +12,7 @@ const AboutUs = () => {
       update imageURL in team
       update domain name in contact
   */
+
   return (
     <main className="min-h[calc(100vh - 4rem)] w-full bg-base-content text-base-200">
       <Header title={"about us"} />
