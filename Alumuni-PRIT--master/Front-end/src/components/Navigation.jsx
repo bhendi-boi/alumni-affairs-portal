@@ -10,7 +10,7 @@ const Navigation = () => {
   const { user, logout } = useUserContext();
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-10 bg-base-100 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100">
+    <nav className="navbar sticky flex items-center top-0 z-10 bg-gray-800 text-slate-50 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100 border-b border-slate-100 border-opacity-40">
       <div className="navbar-start sticky w-full">
         {/* dropdown  */}
         <div className="dropdown md:hidden">
@@ -96,7 +96,7 @@ const Navigation = () => {
           <div>
             <div className="w-14 rounded">
               <a href="http://www.iiitdm.ac.in" target="_blank">
-                <img className="w-full" src={iiitdmLogo} />
+                <img className="w-full " src={iiitdmLogo} />
               </a>
             </div>
           </div>
@@ -136,7 +136,10 @@ const Navigation = () => {
         </div>
         <div className="hidden xs:block">
           {!user && (
-            <Link to="/login" className="btn btn-outline mx-2 sm:px-6 self-end">
+            <Link
+              to="/login"
+              className="btn btn-outline text-slate-50 mx-2 sm:px-6 self-end"
+            >
               Login
             </Link>
           )}

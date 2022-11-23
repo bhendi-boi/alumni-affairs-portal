@@ -38,7 +38,7 @@ const Header = ({ title, links, setLinks }) => {
   };
 
   return (
-    <header className="flex items-center h-28 w-full bg-base-content text-white sticky top-0 z-10 shadow-xl font-head">
+    <header className="flex items-center h-20 md:h-24 w-full bg-gray-800 text-base-100 sticky top-0 z-10 shadow-xl font-head">
       <Link
         to=""
         className="pl-6 pr-3 xs:px-6  capitalize font-medium"

@@ -12,7 +12,7 @@ const AboutCard = ({ title, text, imageURL, reverse }) => {
     <div
       className={
         (reverse ? "sm:flex-row-reverse " : " ") +
-        "items-center flex flex-col sm:flex-row"
+        "items-center flex flex-col sm:flex-row bg-slate-300"
       }
     >
       <div className="w-full sm:w-[40%] md:w-[30%] h-full px-4 md:p-8  grid place-items-center">
@@ -26,9 +26,7 @@ const AboutCard = ({ title, text, imageURL, reverse }) => {
         />
       </div>
       <div className="w-full sm:w-[70%]">
-        <h3 className="hidden sm:inline mx-6 md:mx-12 mt-4 mb-8 text-5xl section-title">
-          {title}
-        </h3>
+        <h3 className="hidden ">{title}</h3>
         {text.map((paragraph) => {
           return (
             <p
