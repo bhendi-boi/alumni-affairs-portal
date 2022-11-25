@@ -104,7 +104,7 @@ const SignUp = () => {
 
   return (
     <main className="min-h-[calc(100vh-4rem)] flex justify-center items-center">
-      <section className="w-full h-full sm:w-[90%] z-10 bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl">
+      <section className="w-full h-full sm:w-[90%] bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl">
         <section className="h-full sm:w-[40%] flex p-10">
           <img
             src={iiitdmLogo}

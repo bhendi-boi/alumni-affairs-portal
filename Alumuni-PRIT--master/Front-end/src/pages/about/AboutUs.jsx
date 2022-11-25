@@ -26,15 +26,19 @@ const AboutUs = () => {
           ]}
         />
         <AboutCard
-          title={"Message from PIC"}
+          title={"Message from the PIC"}
           imageURL={alumniAffairsLogo}
-          text={["message from pic"]}
+          text={[
+            "message from the pic lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectus",
+          ]}
           reverse
         />
         <AboutCard
           title={"Message from the Director"}
           imageURL={alumniAffairsLogo}
-          text={["message from the director"]}
+          text={[
+            "message from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectus",
+          ]}
         />
       </section>
       <Team />

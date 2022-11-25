@@ -12,11 +12,11 @@ const AboutCard = ({ title, text, imageURL, reverse }) => {
     <div
       className={
         (reverse ? "sm:flex-row-reverse " : " ") +
-        "items-center flex flex-col flex-1 sm:flex-row mx-4 border-b  border-slate-400"
+        "flex flex-col sm:flex-row mx-4 border-b border-slate-400"
       }
     >
-      <div className="w-full sm:w-[40%] md:w-[30%] h-full px-4 md:p-8  grid place-items-center">
-        <h3 className="sm:hidden my-3 text-3xl sm:text-5xl font-medium self-start text-base-100">
+      <div className="w-full sm:w-[40%] md:w-[30%] px-4 md:p-8 flex flex-col items-center">
+        <h3 className="sm:hidden my-3 text-3xl sm:text-5xl text-slate-50 font-medium self-start">
           {title}
         </h3>
         <img
@@ -25,15 +25,15 @@ const AboutCard = ({ title, text, imageURL, reverse }) => {
           className="object-contain p-6"
         />
       </div>
-      <div className="w-full sm:w-[70%]">
-        <h3 className="hidden sm:inline mx-6 md:mx-12 mt-4 mb-8 text-5xl ">
+      <div className="w-full sm:w-[70%] h-full flex flex-col justify-between px-2 sm:px-6 pb-4">
+        <h3 className="hidden sm:inline text-5xl font-medium text-slate-50 mt-4">
           {title}
         </h3>
         {text.map((paragraph) => {
           return (
             <p
               key={paragraph}
-              className="mx-8 md:ml-16 my-2 text-base sm:text-xl"
+              className="text-base sm:text-xl my-1 text-gray-300"
             >
               {paragraph}
             </p>

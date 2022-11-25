@@ -9,11 +9,13 @@ import { useUserContext } from "../context/UserContext";
 const Navigation = () => {
   const { user, logout } = useUserContext();
 
+  const linksClassName = "uppercase text-xl hover-bordered";
+
   return (
     <nav className="navbar sticky flex items-center top-0 z-10 bg-gray-800 text-slate-50 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100 border-b border-slate-100 border-opacity-40">
       <div className="navbar-start sticky w-full">
         {/* dropdown  */}
-        <div className="dropdown md:hidden">
+        <div className="dropdown md:hidden bg-gray-800 ">
           <label tabIndex={0} className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,12 +34,12 @@ const Navigation = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800 rounded-box w-44 sm:w-52"
           >
-            <li>
+            <li className={linksClassName}>
               <Link to="/">Home</Link>
             </li>
-            <li tabIndex={0}>
+            <li className={linksClassName} tabIndex={0}>
               <Link to="/community" className="justify-between">
                 Community
                 <svg
@@ -50,7 +52,7 @@ const Navigation = () => {
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
               </Link>
-              <ul className="menu bg-base-100 w-56 rounded-box">
+              <ul className="menu bg-gray-800 w-56 rounded-box">
                 <li className="hover-bordered">
                   <Link to="/community/cs">COMPUTER SCIENCE</Link>
                 </li>
@@ -65,27 +67,25 @@ const Navigation = () => {
                 </li>
               </ul>
             </li>
-            <li>
+            <li className={linksClassName}>
               <Link to="/gallery">Gallery</Link>
             </li>
-            <li>
+            <li className={linksClassName}>
               <Link to="/signup">Join Us</Link>
             </li>
-            <li>
-              <a>Jobs/Mentoring</a>
-            </li>
-            <li>
+
+            <li className={linksClassName}>
               <Link to="/events">Events</Link>
             </li>
-            <li>
+            <li className={linksClassName}>
               <Link to="/about">About</Link>
             </li>
             {user ? (
-              <li>
+              <li className={linksClassName}>
                 <Link to="/profile">Profile</Link>
               </li>
             ) : (
-              <li>
+              <li className={linksClassName}>
                 <Link to="/login">Login</Link>
               </li>
             )}

@@ -30,7 +30,7 @@ const Team = () => {
 
   return (
     <section className="px-6 my-4">
-      <section className="flex flex-col">
+      <section className="flex flex-col border-b border-slate-100">
         <h3 className="py-6 capitalize text-5xl section-title">team</h3>
         <div className="h-full min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 overflow-x-scroll ">
           {teamMembers.map((member) => {
@@ -47,9 +47,7 @@ const Team = () => {
         </div>
       </section>
       <section className="flex flex-col">
-        <h3 className="py-6 capitalize text-5xl section-title">
-          previous teams
-        </h3>
+        <h3 className="py-6 capitalize text-5xl">previous teams</h3>
         <div className=" min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 overflow-x-scroll lg:overflow-hidden">
           {teamMembers.map((member) => {
             return (
