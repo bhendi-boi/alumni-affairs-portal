@@ -12,10 +12,10 @@ const Navigation = () => {
   const linksClassName = "uppercase text-xl hover-bordered";
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-10 bg-gray-800 text-slate-50 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100 border-b border-slate-100 border-opacity-40">
-      <div className="navbar-start sticky w-full">
+    <nav className="navbar sticky flex items-center top-0 z-10 bg-gray-800 text-slate-50 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100 border-b border-slate-400">
+      <div className="navbar-start w-full">
         {/* dropdown  */}
-        <div className="dropdown md:hidden bg-gray-800 ">
+        <div className="dropdown md:hidden  bg-gray-800 z-50">
           <label tabIndex={0} className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"

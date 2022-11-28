@@ -1,7 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
 // components
-import Navigation from "./components/Navigation";
 import AnimatedRoutes from "./components/AnimatedRoutes";
 
 // context
@@ -13,7 +12,6 @@ function App() {
   return (
     <BrowserRouter className="App">
       <UserProvider>
-        <Navigation />
         <AnimatedRoutes />
       </UserProvider>
     </BrowserRouter>

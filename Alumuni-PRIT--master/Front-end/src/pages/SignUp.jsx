@@ -34,7 +34,7 @@ const SignUp = () => {
   // variables
 
   const inputClassName =
-    "inline w-[85%] mx-auto sm:mx-4 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300 focus:ring-blue-600 focus:outline-none invalid:ring-red-600";
+    "inline w-[85%] mx-auto sm:mx-4 my-2 px-2 py-2 bg-transparent border-b-2 outline-none border-slate-400 text-gray-600  transition duration-500 hover:border-blue-600 focus:border-blue-600 invalid:border-red-600";
 
   // effects
   useEffect(() => {
@@ -109,16 +109,18 @@ const SignUp = () => {
           <img
             src={iiitdmLogo}
             alt="alumni portal logo"
-            className="self-center scale-75 sm:scale-100 w-full"
+            className="self-center w-full scale-75 sm:scale-100"
           />
         </section>
-        <section className="w-full sm:w-[60%] flex flex-col justify-between">
-          <p className="self-center my-2 text-xl">Tell us about your self</p>
+        <section className="w-full sm:w-[60%] flex flex-col justify-between bg-base-100">
+          <p className="self-center my-2 text-2xl text-black">
+            Tell us about your self
+          </p>
           <form
-            className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2 content-center"
+            className="grid content-center grid-cols-1 grid-rows-9 sm:grid-cols-2"
             onSubmit={(e) => handleSubmit(e)}
           >
-            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+            <div className="flex items-center justify-center col-span-2 sm:col-span-1">
               <input
                 onChange={handleChange}
                 value={formData.username}
@@ -129,7 +131,7 @@ const SignUp = () => {
                 className={inputClassName}
               />
             </div>
-            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+            <div className="flex items-center justify-center col-span-2 sm:col-span-1">
               <input
                 onChange={handleChange}
                 value={formData.rollNo}
@@ -139,7 +141,7 @@ const SignUp = () => {
                 className={inputClassName}
               />
             </div>
-            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+            <div className="flex items-center justify-center col-span-2 sm:col-span-1">
               <input
                 onChange={handleChange}
                 value={formData.email}
@@ -157,7 +159,7 @@ const SignUp = () => {
                 setPhoneNumber={setPhoneNumber}
               />
             </div>
-            <div className="flex justify-center items-center col-span-2 sm:col-span-1">
+            <div className="flex items-center justify-center col-span-2 sm:col-span-1">
               <input
                 onChange={handleChange}
                 value={formData.linkedInProfileName}
@@ -167,8 +169,8 @@ const SignUp = () => {
                 className={inputClassName}
               />
             </div>
-            <div className="mx-auto col-span-2 sm:col-span-1">
-              <FormControl className="px-2 py-3">
+            {/* <div className="col-span-2 mx-auto sm:col-span-1"> */}
+            {/* <FormControl className="px-2 py-3">
                 <InputLabel htmlFor="branch" className="mt-2">
                   Branch
                 </InputLabel>
@@ -178,9 +180,18 @@ const SignUp = () => {
                   <option value={"me"}>Mechanical</option>
                   <option value={"sm"}>Smart Manufacturing</option>
                 </NativeSelect>
-              </FormControl>
+              </FormControl> */}
+            <div className="w-[85%] py-4 form-control col-span-2 mx-auto sm:col-span-1">
+              <div className="w-full input-group">
+                <select className="w-full pb-2 border-b-2 border-slate-400 focus:outline-none focus:border-blue-600">
+                  <option selected>Electronics</option>
+                  <option>Computers</option>
+                  <option>Mechanical</option>
+                </select>
+              </div>
             </div>
-            <div className="flex justify-center items-center col-span-2">
+            {/* </div> */}
+            <div className="flex items-center justify-center col-span-2">
               <input
                 onChange={handleChange}
                 value={formData.password}
@@ -188,12 +199,10 @@ const SignUp = () => {
                 name="password"
                 placeholder="Create password*"
                 required
-                className="w-[85%] block sm:w-[90%] mx-auto sm:mx-6 my-2 px-2 py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300
-                       focus:ring-blue-600 focus:outline-none
-                       invalid:ring-red-600"
+                className={inputClassName}
               />
             </div>
-            <div className="flex justify-center items-center col-span-2">
+            <div className="flex items-center justify-center col-span-2">
               <input
                 onChange={(e) => {
                   setConfirmPassword(`${e.target.value}`);
@@ -203,14 +212,12 @@ const SignUp = () => {
                 value={confirmPassword}
                 placeholder="Confirm password*"
                 required
-                className="w-[85%] block sm:w-[90%]  col-span-2 mx-auto sm:mx-6 my-2 px-2 pr-4  py-2 rounded-md border border-gray-300 text-gray-600 ring-2 ring-sky-300 transition duration-300
-                      focus:ring-blue-600 focus:outline-none
-                      invalid:ring-red-600"
+                className={inputClassName}
               />
             </div>
             {error && (
-              <div className="flex justify-start mx-6 px-4 items-center">
-                <p className="text-error text-base">{error}</p>
+              <div className="flex items-center justify-start px-4 mx-6">
+                <p className="text-base text-error">{error}</p>
               </div>
             )}
             <SubmitButton
@@ -219,12 +226,12 @@ const SignUp = () => {
               text={"sign up"}
             />
           </form>
-          <div className="mb-4 text-xl flex justify-center items-center ">
+          <div className="flex items-center justify-center mb-4 text-xl ">
             <p>
               Already a member?{" "}
               <Link
                 to="/login"
-                className="cursor-pointer font-medium text-blue-500 hover:text-blue-600"
+                className="font-medium text-blue-500 cursor-pointer hover:text-blue-600"
               >
                 Signin
               </Link>

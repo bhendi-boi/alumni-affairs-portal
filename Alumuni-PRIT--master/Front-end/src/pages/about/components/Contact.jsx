@@ -13,31 +13,31 @@ const Contact = () => {
     {
       href: { alumniPortalDomian },
       icon: (
-        <BsLink className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+        <BsLink className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
       ),
     },
     {
       href: "mailto:alumniaffairs@iiitdm.ac.in",
       icon: (
-        <SiGmail className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+        <SiGmail className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
       ),
     },
     {
       href: "https://www.instagram.com/alumniaffairsiiitdm/",
       icon: (
-        <BsInstagram className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+        <BsInstagram className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
       ),
     },
     {
       href: "https://www.linkedin.com/company/alumni-affairs-iiitdm/",
       icon: (
-        <BsLinkedin className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+        <BsLinkedin className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
       ),
     },
     {
       href: "https://www.youtube.com/channel/UCYIVsibOwxldwfDLtkhQlZQ/",
       icon: (
-        <BsYoutube className="w-10 h-10 hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105 transition-all duration-300 ease-in-out" />
+        <BsYoutube className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
       ),
     },
   ];
@@ -58,9 +58,9 @@ const Contact = () => {
   ];
 
   return (
-    <section className="w-full flex flex-col sm:flex-row gap-4">
+    <section className="flex flex-col w-full gap-4 sm:flex-row">
       <div className="sm:w-[50%] sm:border-r px-6">
-        <h5 className="text-5xl py-4 text-slate-50 font-medium">
+        <h5 className="py-4 text-5xl font-medium text-slate-50">
           Contact Info
         </h5>
         {people.map((person) => {
@@ -90,28 +90,28 @@ const Contact = () => {
       >
         <p className="text-5xl font-medium text-slate-50">Reach out !!</p>
         <input
-          className="block mx-6 my-2 mt-4 bg-transparent text-slate-200 text-lg px-4 py-2  border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
+          className="block px-4 py-2 mx-6 my-2 mt-4 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Name*"
           name="name"
         />
         <input
-          className="block mx-6 my-2 bg-transparent text-slate-200 text-lg px-4 py-2 border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="email"
           required
           placeholder="Email*"
           name="email"
         />
         <input
-          className="block mx-6 my-2 bg-transparent text-slate-200 text-lg px-4 py-2 border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Subject*"
           name="subject"
         />
         <input
-          className="block mx-6 my-2 bg-transparent text-slate-200 text-lg px-4 py-2 border-solid border-b-2 border-gray-800 focus:outline-none  focus:border-blue-600 transition duration-1000"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Message*"
@@ -119,7 +119,7 @@ const Contact = () => {
         />
         <button
           type="submit"
-          className="btn btn-primary btn-outline my-4 mx-2  self-center sm:self-end"
+          className="self-center mx-2 my-4 btn btn-primary btn-outline sm:self-end"
         >
           Send
         </button>

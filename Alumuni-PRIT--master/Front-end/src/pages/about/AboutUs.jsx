@@ -14,7 +14,7 @@ const AboutUs = () => {
   */
 
   return (
-    <main className="min-h[calc(100vh - 4rem)] w-full bg-base-content text-base-200">
+    <main className="min-h[calc(100vh - 4rem)] w-full bg-base-content">
       <Header title={"about us"} />
       <section className="flex flex-col">
         <AboutCard

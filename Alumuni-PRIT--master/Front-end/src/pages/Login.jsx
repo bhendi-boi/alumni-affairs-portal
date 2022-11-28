@@ -70,42 +70,43 @@ const Login = () => {
       <div className="w-full h-full md:w-[80%] md:h-[80%] sm:z-10 flex flex-col items-center justify-center text-white ">
         <section className="h-full w-full sm:h-[90%] sm:w-[80%] flex flex-col items-center sm:flex-row  sm:shadow-xl sm:rounded-2xl border border-base-content sm:border-[#262c5e] sm:bg-[#262c5e]">
           {/* image-container */}
-          <div className="w-full h-full sm:w-[40%] flex items-center p-5 sm:border-r">
+          <picture className="w-full h-full sm:w-[40%] flex items-center p-20 sm:border-r">
             <img src={alumniLogo} alt="alumni-logo" className="block" />
-          </div>
+          </picture>
           <div className="w-full sm:w-[60%] h-full">
             <form
-              className="space-y-4 w-full flex flex-col justify-center items-center"
+              className="flex flex-col items-center justify-center w-full space-y-4"
               onSubmit={(e) => handleSubmit(e)}
             >
-              <p className="self-center pt-4 md:pt-6 lg:pt-8 text-base xs:text-2xl">
-                Login to continue using this site
+              <p className="self-center pt-4 text-2xl md:pt-6 lg:pt-8 xs:text-3xl">
+                Login in here
               </p>
               <div className="w-[85%]">
-                <label htmlFor="email" className="py-2 block">
+                <label htmlFor="email" className="block py-2 text-xl">
                   Email or Username
                 </label>
                 <input
                   className={
-                    "w-full px-4 py-2 ring-2 rounded-md text-base-content transition duration-300 focus:ring-2 focus:ring-black  focus:outline-none invalid:ring-2 invalid:ring-red-600 " +
-                    (!error ? "ring-red-600" : "")
+                    "w-full px-4 py-2 transition duration-1000 bg-transparent border-b-2 border-slate-400 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600 invalid:border-red-600" +
+                    (!error ? "border-red-600" : "")
                   }
                   type="email"
                   name="email"
                   id="email"
                   value={data.email}
                   required
+                  autoFocus
                   onChange={handleChange}
                 />
               </div>
               <div className="w-[85%]  mb-4">
-                <div className="w-full flex items-center justify-between">
-                  <label htmlFor="password" className="">
+                <div className="flex items-center justify-between w-full">
+                  <label htmlFor="pwd" className="block py-2 text-xl">
                     Password
                   </label>
                   <button
                     onClick={handleForgotPassword}
-                    className="p-2 sm:mr-2"
+                    className="p-2 transition-colors duration-200 sm:mr-2 hover:text-blue-600"
                     type="reset"
                   >
                     <span className="text-sm">Forgot your password ?</span>
@@ -113,12 +114,14 @@ const Login = () => {
                 </div>
                 <input
                   className={
-                    "w-full px-4 py-2 rounded-md  text-base-content transition duration-300 focus:ring-2 focus:ring-black focus:outline-none invalid:ring-2 invalid:ring-red-600 " +
-                    (error ? "ring-red-600" : "")
+                    "w-full px-4 py-2 transition duration-1000 bg-transparent border-b-2 border-slate-400 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600 invalid:border-red-600 " +
+                    (!error ? "border-red-600" : "")
                   }
                   type="password"
                   name="password"
                   id="pwd"
+                  minLength={8}
+                  maxLength={20}
                   value={data.password}
                   required
                   onChange={handleChange}
@@ -136,9 +139,12 @@ const Login = () => {
                   text={"Login"}
                 />
               </div>
-              <p className="border-t sm:border-none py-4 sm:pt-3 text-base self-center">
+              <p className="self-center py-4 text-base border-t sm:border-none sm:pt-3">
                 Don't have an account ?{" "}
-                <Link to="/signup" className="text-sky-600 hover:opacity-75">
+                <Link
+                  to="/signup"
+                  className="opacity-75 text-sky-600 hover:text-blue-600 hover:opacity-100"
+                >
                   Sign up
                 </Link>
               </p>

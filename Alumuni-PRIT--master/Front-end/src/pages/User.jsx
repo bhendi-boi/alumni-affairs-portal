@@ -1,11 +1,11 @@
 import Hero from "../components/user/Hero";
 import Questions from "../components/user/Questions";
 
-const Main = () => {
+const User = () => {
   return (
     <main className="min-h-[calc(100vh-4rem)]">
       <Hero />
-      <div className=" grid grid-cols-8 mx-32 my-10 ">
+      <div className="grid grid-cols-8 mx-32 my-10 ">
         <div className="col-span-6 ">
           <Questions />
         </div>
@@ -15,4 +15,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default User;

@@ -2,10 +2,10 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // pages
-import Main from "../pages/Main";
+import Root from "../pages/Root";
+import User from "../pages/User";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-import Profile from "../pages/Profile";
 import Error from "../pages/Error";
 import Events from "../pages/events/Events";
 import Gallery from "../pages/Gallery";
@@ -32,12 +32,12 @@ const AnimatedRoutes = () => {
     <AnimatePresence>
       <Routes>
         <Route path="/">
-          <Route index element={<Main />} />
+          <Route index element={<Root />} />
           <Route
             path="profile"
             element={
               <ProtectedRoute>
-                <Profile />
+                <User />
               </ProtectedRoute>
             }
           />
