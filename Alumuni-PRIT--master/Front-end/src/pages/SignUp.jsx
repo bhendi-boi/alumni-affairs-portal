@@ -5,9 +5,6 @@ import axios from "axios";
 // components and styles
 import PhoneInput from "../components/PhoneInput";
 import SubmitButton from "../components/SubmitButton";
-import { InputLabel } from "@mui/material";
-import FormControl from "@mui/material/FormControl";
-import NativeSelect from "@mui/material/NativeSelect";
 
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
@@ -103,16 +100,16 @@ const SignUp = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] flex justify-center items-center">
-      <section className="w-full h-full sm:w-[90%] bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl">
-        <section className="h-full sm:w-[40%] flex p-10">
+    <main className="flex items-center justify-center min-h-screen">
+      <section className="w-full h-full sm:w-[90%] bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl overflow-hidden">
+        <picture className="h-full sm:w-[40%] flex p-10">
           <img
             src={iiitdmLogo}
             alt="alumni portal logo"
             className="self-center w-full scale-75 sm:scale-100"
           />
-        </section>
-        <section className="w-full sm:w-[60%] flex flex-col justify-between bg-base-100">
+        </picture>
+        <section className="w-full sm:w-[60%] flex flex-col justify-between bg-base-100 ">
           <p className="self-center my-2 text-2xl text-black">
             Tell us about your self
           </p>

@@ -63,7 +63,7 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] w-full flex justify-center items-center bg-base-content overflow-hidden relative">
+    <main className="min-h-screen w-full flex justify-center items-center bg-base-content overflow-hidden relative">
       {/* todo: find a good bg */}
       {/* <div className="login-bg"></div> */}
 

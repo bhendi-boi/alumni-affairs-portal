@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // pages
@@ -31,8 +31,7 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
       <Routes>
-        <Route path="/">
-          <Route index element={<Root />} />
+        <Route path="/" element={<Root />}>
           <Route
             path="profile"
             element={
@@ -41,7 +40,6 @@ const AnimatedRoutes = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="signup" element={<SignUp />} />
           <Route path="community" element={<Community />}>
             <Route path="ec" element={<CommunitynityBranchEC />} />
             <Route path="sm" element={<CommunitynityBranchSM />} />
@@ -59,6 +57,7 @@ const AnimatedRoutes = () => {
           </Route>
           <Route path="about" element={<AboutUs />} />
         </Route>
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>
