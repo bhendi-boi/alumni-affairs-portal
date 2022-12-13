@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 
 // pages
 import Root from "../pages/Root";
+import Home from "../pages/Home";
 import User from "../pages/User";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
@@ -10,11 +11,8 @@ import Error from "../pages/Error";
 import Events from "../pages/events/Events";
 import Gallery from "../pages/Gallery";
 import AboutUs from "../pages/about/AboutUs";
-import Community from "../pages/community/Community";
-import CommunitynityBranchEC from "../pages/community/CommunityBranchEC";
-import CommunitynityBranchCS from "../pages/community/CommunityBranchCS";
-import CommunitynityBranchSM from "../pages/community/CommunityBranchSM";
-import CommunitynityBranchME from "../pages/community/CommunityBranchME";
+import Services from "../pages/Services";
+import Fund from "../pages/Fund";
 
 // components
 import ProtectedRoute from "./ProtectedRoute";
@@ -32,6 +30,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence>
       <Routes>
         <Route path="/" element={<Root />}>
+          <Route index element={<Home />} />
           <Route
             path="profile"
             element={
@@ -40,13 +39,7 @@ const AnimatedRoutes = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="community" element={<Community />}>
-            <Route path="ec" element={<CommunitynityBranchEC />} />
-            <Route path="sm" element={<CommunitynityBranchSM />} />
-            <Route path="me" element={<CommunitynityBranchME />} />
-            <Route path="cs" element={<CommunitynityBranchCS />} />
-          </Route>
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="about" element={<AboutUs />} />
           <Route path="events" element={<Events />}>
             <Route path="alumnitalks" element={<AlumniTalks />} />
             <Route path="reunions" element={<Reunions />} />
@@ -55,7 +48,9 @@ const AnimatedRoutes = () => {
             <Route path="alumnimeets" element={<AlumniMeets />} />
             <Route path="convocation" element={<Convocation />} />
           </Route>
-          <Route path="about" element={<AboutUs />} />
+          <Route path="gallery" element={<Gallery />} />
+          <Route path="services" element={<Services />} />
+          <Route path="fund" element={<Fund />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
