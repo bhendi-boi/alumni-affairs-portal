@@ -32,6 +32,7 @@ const Navigation = () => {
               />
             </svg>
           </label>
+          {/* mobile nav */}
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800 rounded-box w-44 sm:w-52"
@@ -39,33 +40,11 @@ const Navigation = () => {
             <li className={linksClassName}>
               <Link to="/">Home</Link>
             </li>
-            <li className={linksClassName} tabIndex={0}>
-              <Link to="/community" className="justify-between">
-                Community
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </Link>
-              <ul className="menu bg-gray-800 w-56 rounded-box">
-                <li className="hover-bordered">
-                  <Link to="/community/cs">COMPUTER SCIENCE</Link>
-                </li>
-                <li className="hover-bordered">
-                  <Link to="/community/ec">ELECTRONICS</Link>
-                </li>
-                <li className="hover-bordered">
-                  <Link to="/community/me">MECHANICAL</Link>
-                </li>
-                <li className="hover-bordered">
-                  <Link to="/community/sm">SMART MANUFACTURING</Link>
-                </li>
-              </ul>
+            <li className={linksClassName}>
+              <Link to="/about">About</Link>
+            </li>
+            <li className={linksClassName}>
+              <Link to="/events">Events</Link>
             </li>
             <li className={linksClassName}>
               <Link to="/gallery">Gallery</Link>
@@ -73,12 +52,11 @@ const Navigation = () => {
             <li className={linksClassName}>
               <Link to="/signup">Join Us</Link>
             </li>
-
             <li className={linksClassName}>
-              <Link to="/events">Events</Link>
+              <Link to="/services">Services</Link>
             </li>
             <li className={linksClassName}>
-              <Link to="/about">About</Link>
+              <Link to="/fund">Fund</Link>
             </li>
             {user ? (
               <li className={linksClassName}>
@@ -115,21 +93,25 @@ const Navigation = () => {
       <div className="justify-end md:justify-between flex items-center">
         <div className="hidden z-20 md:flex">
           <div className="flex-none">
+            {/* desktop nav */}
             <ul className="menu menu-horizontal p-0">
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li tabIndex={0}>
-                <Link to="/community">Community</Link>
-              </li>
               <li>
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
                 <Link to="/events">Events</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/gallery">Gallery</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/fund">Fund</Link>
               </li>
             </ul>
           </div>
