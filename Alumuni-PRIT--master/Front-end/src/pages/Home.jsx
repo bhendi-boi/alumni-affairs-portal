@@ -3,7 +3,11 @@ const Home = () => {
   /* 
       should render at path "/" when user is not logged in
   */
-  return <></>;
+  return (
+    <main className="bg-base-content min-h-screen">
+      <p>home</p>
+    </main>
+  );
 };
 
 export default Home;

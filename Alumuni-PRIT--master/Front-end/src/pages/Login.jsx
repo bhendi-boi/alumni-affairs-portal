@@ -133,7 +133,7 @@ const Login = () => {
                 className={"w-3/4"}
                 text={"Login"}
               />
-              <p className="self-center py-4 text-base border-t sm:border-none sm:pt-3">
+              <p className="self-center py-4 text-base">
                 Don't have an account ?{" "}
                 <Link
                   to="/signup"

@@ -9,6 +9,7 @@ import OtherLinks from "../components/OtherLinks";
 // hooks
 import useLocalStorageState from "../hooks/useLocalStorageState";
 import iiitdmLogo from "../assets/iiitdm.png";
+import ALUMNILOGO from "../assets/oldoldlogo_whiteishhhh.png";
 //
 const SignUp = () => {
   // state
@@ -31,7 +32,7 @@ const SignUp = () => {
   // variables
 
   const inputClassName =
-    "inline w-[85%] mx-auto sm:mx-4 my-2 px-2 py-2 bg-transparent border-b-2 outline-none border-slate-400 text-gray-600  transition duration-500 hover:border-blue-600 focus:border-blue-600 invalid:border-red-600";
+    "inline w-[85%] mx-auto sm:mx-4 my-2 px-2 py-2 bg-transparent border-b-2 outline-none border-neutral-100 text-base-100  transition duration-500 hover:border-blue-600 focus:border-blue-600 invalid:border-red-600";
 
   // effects
   useEffect(() => {
@@ -69,8 +70,15 @@ const SignUp = () => {
       }));
     } else if (e.target.name === "password") {
       setFormData((prev) => ({ ...prev, password: `${e.target.value}` }));
-    } else if (e.target.name === "branch") {
-      setFormData((prev) => ({ ...prev, branch: `${e.target.value}` }));
+    }
+  };
+  const handleBranch = (e) => {
+    if (e.target.name === "electronics") {
+      setFormData((prev) => ({ ...prev, branch: "ec" }));
+    } else if (e.target.name === "computers") {
+      setFormData((prev) => ({ ...prev, branch: "cs" }));
+    } else {
+      setFormData((prev) => ({ ...prev, branch: "me" }));
     }
   };
 
@@ -101,21 +109,19 @@ const SignUp = () => {
 
   return (
     <>
-      <main className="flex items-center justify-center min-h-screen">
-        <section className="w-full h-full sm:w-[90%] bg-base-100 md:w-[80%] sm:h-[90%]  sm:border-2 border-[#4e54c8] sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl overflow-hidden">
-          <picture className="h-full sm:w-[40%] flex p-10">
+      <main className="flex items-center justify-center min-h-screen bg-base-content">
+        <section className="w-full h-full sm:w-[90%]  md:w-[80%] sm:h-[90%]  sm:border-2 sm:shadow-2xl flex flex-col items-center sm:flex-row sm:rounded-2xl overflow-hidden">
+          <picture className="h-full sm:w-[40%] flex p-10 border-r-2">
             <img
-              src={iiitdmLogo}
+              src={ALUMNILOGO}
               alt="alumni portal logo"
               className="self-center w-full scale-75 sm:scale-100"
             />
           </picture>
-          <section className="w-full sm:w-[60%] flex flex-col justify-between bg-base-100 ">
-            <p className="self-center my-2 text-2xl text-black">
-              Tell us about your self
-            </p>
+          <section className="w-full sm:w-[60%] flex flex-col justify-between text-slate-50">
+            <p className="self-center my-2 text-2xl">Tell us about your self</p>
             <form
-              className="grid content-center grid-cols-1 grid-rows-9 sm:grid-cols-2"
+              className="grid grid-cols-1 grid-rows-9 sm:grid-cols-2"
               onSubmit={(e) => handleSubmit(e)}
             >
               <div className="flex items-center justify-center col-span-2 sm:col-span-1">
@@ -167,28 +173,32 @@ const SignUp = () => {
                   className={inputClassName}
                 />
               </div>
-              {/* <div className="col-span-2 mx-auto sm:col-span-1"> */}
-              {/* <FormControl className="px-2 py-3">
-                <InputLabel htmlFor="branch" className="mt-2">
-                  Branch
-                </InputLabel>
-                <NativeSelect onChange={handleChange} name="branch" id="branch">
-                  <option value={"ec"}>Electronics</option>
-                  <option value={"cs"}>Computer Science</option>
-                  <option value={"me"}>Mechanical</option>
-                  <option value={"sm"}>Smart Manufacturing</option>
-                </NativeSelect>
-              </FormControl> */}
-              <div className="w-[85%] py-4 form-control col-span-2 mx-auto sm:col-span-1">
-                <div className="w-full input-group">
-                  <select className="w-full pb-2 border-b-2 border-slate-400 focus:outline-none focus:border-blue-600">
-                    <option selected>Electronics</option>
-                    <option>Computers</option>
-                    <option>Mechanical</option>
-                  </select>
-                </div>
+              <div className="w-[85%] py-4 col-span-2 mx-auto sm:col-span-1 flex justify-around items-center">
+                <button
+                  type="button"
+                  name="electronics"
+                  onClick={handleBranch}
+                  className="bg-base-100 text-gray-900 font-medium px-4 py-2 rounded-md text-lg"
+                >
+                  EC
+                </button>
+                <button
+                  type="button"
+                  name="computers"
+                  onClick={handleBranch}
+                  className="bg-base-100 text-gray-900 font-medium px-4 py-2 rounded-md text-lg"
+                >
+                  CS
+                </button>
+                <button
+                  type="button"
+                  onClick={handleBranch}
+                  name="mechanical"
+                  className="bg-base-100 text-gray-900 font-medium px-4 py-2 rounded-md text-lg"
+                >
+                  ME
+                </button>
               </div>
-              {/* </div> */}
               <div className="flex items-center justify-center col-span-2">
                 <input
                   onChange={handleChange}
@@ -219,19 +229,19 @@ const SignUp = () => {
                 </div>
               )}
               <SubmitButton
-                className={"block col-span-2 mx-4 my-2 p-2 rounded-md"}
+                className={"col-span-2 w-3/4  mx-auto my-2"}
                 isDisabled={isDisabled}
                 text={"sign up"}
               />
             </form>
-            <div className="flex items-center justify-center mb-4 text-xl ">
+            <div className="flex items-center justify-center mb-4 text-base">
               <p>
                 Already a member?{" "}
                 <Link
                   to="/login"
-                  className="font-medium text-blue-500 cursor-pointer hover:text-blue-600"
+                  className="hover:underline focus-within:underline text-blue-500"
                 >
-                  Signin
+                  Login
                 </Link>
               </p>
             </div>
