@@ -14,18 +14,18 @@ import { motion } from "framer-motion";
 
 const TeamMemberProfile = ({ name, emailId, linkedIn, imageURL, post }) => {
   return (
-    <div className="card sm:w-80 bg-base-100 mx-6 my-4 shadow-xl text-2xl text-base-content">
-      <figure className="px-10 pt-10">
+    <div className="w-full my-4 text-2xl bg-white shadow-xl card sm:w-80 text-base-content">
+      <picture className="self-center w-48 h-48 mt-6 overflow-hidden bg-yellow-400 rounded-full">
         <img
           src="https://placeimg.com/400/225/arch"
           alt="team member image"
-          className="rounded-xl"
+          className="object-cover w-full h-full aspect-square"
         />
-      </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title capitalize">{post}</h2>
+      </picture>
+      <div className="items-center text-center card-body">
+        <h2 className="capitalize card-title">{post}</h2>
         <p>{name}</p>
-        <div className="flex justify-center gap-4 w-full h-10">
+        <div className="flex justify-center w-full h-10 gap-4">
           <motion.a
             href={"mailto:" + emailId}
             whileTap={{ scale: 0.96 }}

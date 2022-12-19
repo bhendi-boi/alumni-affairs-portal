@@ -4,7 +4,7 @@ const Home = () => {
       should render at path "/" when user is not logged in
   */
   return (
-    <main className="bg-base-content min-h-screen">
+    <main className="bg-base-100 min-h-screen">
       <p>home</p>
     </main>
   );

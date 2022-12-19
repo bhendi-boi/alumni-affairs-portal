@@ -58,20 +58,19 @@ const Contact = () => {
   ];
 
   return (
-    <section className="flex flex-col w-full gap-4 sm:flex-row">
-      <div className="sm:w-[50%] sm:border-r px-6">
-        <h5 className="py-4 text-5xl font-medium text-slate-50">
+    <section className="flex flex-col w-full gap-4 sm:flex-row text-paragraph">
+      <div className="sm:w-[50%] border-b sm:border-r px-6">
+        <h2 className="py-4 text-5xl font-medium text-subtitle">
           Contact Info
-        </h5>
+        </h2>
         {people.map((person) => {
           return (
             <div key={person.role} className="px-2 py-2 capitalize">
-              <p className="text-2xl text-slate-200">{person.role}</p>
-              <p className="text-lg text-gray-300">{person.name}</p>
+              <p className="text-base">{person.role}</p>
+              <p className="text-xl text-zinc-800 ">{person.name}</p>
             </div>
           );
         })}
-
         <div className="px-2 py-4">
           <ul className="flex gap-4">
             {links.map((link) => {
@@ -88,30 +87,30 @@ const Contact = () => {
         className="sm:w-[50%] px-6 flex flex-col"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <p className="text-5xl font-medium text-slate-50">Reach out !!</p>
+        <h2 className="text-5xl font-medium text-subtitle">Reach out !!</h2>
         <input
-          className="block px-4 py-2 mx-6 my-2 mt-4 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
+          className="block px-4 py-2 mx-6 my-2 mt-4 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Name*"
           name="name"
         />
         <input
-          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="email"
           required
           placeholder="Email*"
           name="email"
         />
         <input
-          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Subject*"
           name="subject"
         />
         <input
-          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-800 border-solid text-slate-200 focus:outline-none hover:border-blue-600 focus:border-blue-600"
+          className="block px-4 py-2 mx-6 my-2 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"
           required
           placeholder="Message*"

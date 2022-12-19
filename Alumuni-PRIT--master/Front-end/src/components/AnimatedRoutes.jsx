@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // pages
@@ -25,7 +25,6 @@ import Convocation from "../pages/events/Convocation";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-
   return (
     <AnimatePresence>
       <Routes>

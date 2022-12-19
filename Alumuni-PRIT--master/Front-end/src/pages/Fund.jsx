@@ -6,7 +6,7 @@ const Fund = () => {
   //   link: ""
   // }]);
   return (
-    <main className="bg-base-content min-h-screen">
+    <main className="min-h-screen bg-base-100">
       <Header title={"alumni fund"} />
     </main>
   );

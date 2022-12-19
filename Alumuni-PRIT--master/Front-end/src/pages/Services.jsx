@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 const Services = () => {
   return (
-    <main className="bg-base-content min-h-screen">
+    <main className="min-h-screen bg-base-100">
       <Header title={"services"} />
     </main>
   );

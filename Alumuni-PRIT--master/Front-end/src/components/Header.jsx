@@ -38,27 +38,27 @@ const Header = ({ title, links, setLinks }) => {
   };
 
   return (
-    <header className="flex items-center h-20 md:h-24 w-full bg-gray-800 text-base-100 sticky top-0 z-10 shadow-xl font-head">
+    <header className="sticky top-0 z-10 flex items-center w-full h-16 bg-white shadow-xl md:h-20 font-head">
       <Link
         to=""
-        className="pl-6 pr-3 xs:px-6  capitalize font-medium"
+        className="pl-6 pr-3 font-medium capitalize xs:px-6"
         onClick={links && handleClick}
       >
-        <h1 className="text-3xl sm:text-7xl">{title}</h1>
+        <h1 className="text-3xl sm:text-5xl text-title">{title}</h1>
       </Link>
       {links && (
-        <div className="flex gap-2 xs:gap-4 sm:gap-6 items-center">
-          <p className="py-4 text-3xl xs:text-5xl">❯</p>
+        <div className="flex items-center gap-2 xs:gap-4 sm:gap-6">
+          <p className="py-2 text-3xl sm:py-4">❯</p>
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
-              className="btn-circle w-9 px-2 py-1 xs:px-4 xs:py-2 bg-base-100 text-blue-600 capitalize text-xl font-medium cursor-pointer"
+              className="px-2 py-1 text-xl font-medium capitalize cursor-pointer text-slate-50 btn-circle w-9 xs:px-4 xs:py-2 bg-base-content"
             >
               {activeLink ? activeLink.name : "Navigate? "}
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu shadow rounded-box min-w-fit flex bg-base-100"
+              className="flex shadow dropdown-content menu rounded-box min-w-fit bg-base-100"
             >
               {links.map((link) => {
                 return (

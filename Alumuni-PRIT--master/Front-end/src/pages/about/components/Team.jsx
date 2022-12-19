@@ -29,12 +29,12 @@ const Team = () => {
   const pastTeamMembers = [];
 
   return (
-    <section className="mx-6 my-4">
-      <section className="flex flex-col">
-        <h3 className="py-6 capitalize text-5xl text-slate-50 font-medium">
+    <section className="my-4">
+      <section className="flex flex-col px-4">
+        <h3 className="py-6 text-3xl font-medium capitalize text-subtitle">
           team
         </h3>
-        <div className="h-full min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 sm:overflow-x-scroll  lg:overflow-hidden border-b border-slate-400">
+        <div className="grid h-full min-w-full gap-4 pb-6 border-b sm:grid-flow-col place-items-center sm:gap-6 sm:overflow-x-scroll lg:overflow-hidden">
           {teamMembers.map((member) => {
             return (
               <TeamMemberProfile
@@ -48,11 +48,11 @@ const Team = () => {
           })}
         </div>
       </section>
-      <section className="flex flex-col">
-        <h3 className="py-6 capitalize text-5xl text-slate-50 font-medium">
+      <section className="flex flex-col px-4">
+        <h3 className="py-6 text-3xl font-medium capitalize text-subtitle">
           previous teams
         </h3>
-        <div className=" min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 sm:overflow-x-scroll lg:overflow-hidden border-b border-slate-400">
+        <div className="grid min-w-full gap-4 pb-6 border-b sm:grid-flow-col place-items-center sm:gap-6 sm:overflow-x-scroll lg:overflow-hidden border-slate-400">
           {teamMembers.map((member) => {
             return (
               <TeamMemberProfile

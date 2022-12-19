@@ -13,7 +13,7 @@ const Events = () => {
   ]);
 
   return (
-    <main className="min-h-[calc(100vh - 1rem)] bg-base-content text-white relative">
+    <main className="min-h-[calc(100vh - 1rem)] bg-base-100 relative">
       <Header title={"events"} links={links} setLinks={setLinks} />
       <Outlet />
     </main>

@@ -12,14 +12,14 @@ const Navigation = () => {
   const linksClassName = "uppercase text-xl hover-bordered";
 
   return (
-    <nav className="navbar sticky flex items-center top-0 z-10 bg-gray-800 text-slate-50 h-16 w-full text-xl font-medium drop-shadow-md shadow-base-100 border-b border-slate-400">
-      <div className="navbar-start w-full">
+    <nav className="sticky top-0 z-10 flex items-center w-full h-16 text-xl font-medium text-gray-900 bg-white border-b shadow-xl navbar">
+      <div className="w-full navbar-start">
         {/* dropdown  */}
-        <div className="dropdown md:hidden  bg-gray-800 z-50">
+        <div className="z-50 dropdown md:hidden">
           <label tabIndex={0} className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -35,7 +35,7 @@ const Navigation = () => {
           {/* mobile nav */}
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gray-800 rounded-box w-44 sm:w-52"
+            className="p-2 mt-3 bg-white shadow-lg menu menu-compact dropdown-content rounded-box w-44 sm:w-52"
           >
             <li className={linksClassName}>
               <Link to="/">Home</Link>
@@ -72,7 +72,7 @@ const Navigation = () => {
         {/* logo starts */}
         <div className="flex flex-row items-center gap-2 md:ml-4">
           <div>
-            <div className="w-14 rounded">
+            <div className="rounded w-14">
               <a href="http://www.iiitdm.ac.in" target="_blank">
                 <img className="w-full " src={iiitdmLogo} />
               </a>
@@ -80,7 +80,7 @@ const Navigation = () => {
           </div>
           <p className="text-sm">x</p>
           <div>
-            <div className="w-14 rounded">
+            <div className="rounded w-14">
               <Link to="/">
                 <img className="w-full" src={primaryLogo} />
               </Link>
@@ -90,11 +90,11 @@ const Navigation = () => {
         {/* logo ends*/}
       </div>
       {/* navbar-start ends */}
-      <div className="justify-end md:justify-between flex items-center">
-        <div className="hidden z-20 md:flex">
+      <div className="flex items-center justify-end md:justify-between">
+        <div className="z-20 hidden md:flex">
           <div className="flex-none">
             {/* desktop nav */}
-            <ul className="menu menu-horizontal p-0">
+            <ul className="p-0 menu menu-horizontal">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -118,15 +118,12 @@ const Navigation = () => {
         </div>
         <div className="hidden xs:block">
           {!user && (
-            <Link
-              to="/login"
-              className="btn btn-outline text-slate-50 mx-2 sm:px-6 self-end"
-            >
+            <Link to="/login" className="self-end mx-2 btn btn-outline sm:px-6">
               Login
             </Link>
           )}
           {user && (
-            <div className="dropdown dropdown-end mx-3">
+            <div className="mx-3 dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-20 rounded-full">
                   <img src="https://placeimg.com/80/80/people" />
@@ -134,7 +131,7 @@ const Navigation = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
                   <Link to="/profile" className="justify-between">
