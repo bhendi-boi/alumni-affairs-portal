@@ -88,6 +88,7 @@ const Contact = () => {
         onSubmit={(e) => handleSubmit(e)}
       >
         <h2 className="text-5xl font-medium text-subtitle">Reach out !!</h2>
+        <h2 className="text-5xl font-medium text-subtitle">Reach out !!</h2>
         <input
           className="block px-4 py-2 mx-6 my-2 mt-4 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"

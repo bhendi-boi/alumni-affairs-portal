@@ -35,7 +35,7 @@ const Navigation = () => {
           {/* mobile nav */}
           <ul
             tabIndex={0}
-            className="p-2 mt-3 bg-white shadow-lg menu menu-compact dropdown-content rounded-box w-44 sm:w-52"
+            className="p-2 mt-3 bg-gray-800 shadow menu menu-compact dropdown-content rounded-box w-44 sm:w-52"
           >
             <li className={linksClassName}>
               <Link to="/">Home</Link>
