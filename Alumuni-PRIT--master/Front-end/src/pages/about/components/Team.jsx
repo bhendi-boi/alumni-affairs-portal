@@ -31,7 +31,7 @@ const Team = () => {
   return (
     <section className="mx-6 my-4">
       <section className="flex flex-col">
-        <h3 className="py-6 capitalize text-5xl text-slate-50 font-medium">
+        <h3 className="py-6 capitalize text-5xl text-subtitle font-medium">
           team
         </h3>
         <div className="h-full min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 sm:overflow-x-scroll  lg:overflow-hidden border-b border-slate-400">
@@ -49,7 +49,7 @@ const Team = () => {
         </div>
       </section>
       <section className="flex flex-col">
-        <h3 className="py-6 capitalize text-5xl text-slate-50 font-medium">
+        <h3 className="py-6 capitalize text-5xl text-subtitle font-medium">
           previous teams
         </h3>
         <div className=" min-w-full grid sm:grid-flow-col place-items-center gap-4 sm:gap-6 pb-6 sm:overflow-x-scroll lg:overflow-hidden border-b border-slate-400">

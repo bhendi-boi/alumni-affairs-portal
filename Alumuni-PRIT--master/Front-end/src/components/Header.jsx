@@ -38,13 +38,13 @@ const Header = ({ title, links, setLinks }) => {
   };
 
   return (
-    <header className="flex items-center h-20 md:h-24 w-full bg-gray-800 text-base-100 sticky top-0 z-10 shadow-xl font-head">
+    <header className="flex items-center h-16 md:h-20 w-full bg-white sticky top-0 z-10 shadow-xl font-head">
       <Link
         to=""
         className="pl-6 pr-3 xs:px-6  capitalize font-medium"
         onClick={links && handleClick}
       >
-        <h1 className="text-3xl sm:text-7xl">{title}</h1>
+        <h1 className="text-3xl sm:text-5xl text-title">{title}</h1>
       </Link>
       {links && (
         <div className="flex gap-2 xs:gap-4 sm:gap-6 items-center">

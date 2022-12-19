@@ -6,13 +6,13 @@
 
 const Header = ({ title, text }) => {
   return (
-    <header className="border-b-2 mx-6 top-28 left-0">
-      <h3 className="text-5xl capitalize py-3">{title}</h3>
+    <header className="left-0 mx-6 border-b-2 top-28">
+      <h1 className="py-3 text-5xl capitalize text-title">{title}</h1>
       {text.map((paragraph) => {
         return (
           <p
             key={paragraph}
-            className="mx-8 md:ml-16 my-2 text-base sm:text-2xl"
+            className="mx-8 my-2 text-base md:ml-16 sm:text-2xl"
           >
             {paragraph}
           </p>
