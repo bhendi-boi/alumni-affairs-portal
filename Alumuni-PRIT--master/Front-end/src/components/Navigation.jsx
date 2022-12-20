@@ -9,7 +9,7 @@ import { useUserContext } from "../context/UserContext";
 const Navigation = () => {
   const { user, logout } = useUserContext();
 
-  const linksClassName = "uppercase text-xl hover-bordered";
+  const LINKS_CLASSNAME = "uppercase text-xl hover-bordered";
 
   return (
     <nav className="sticky top-0 z-10 flex items-center w-full h-16 text-xl font-medium text-gray-900 bg-white border-b shadow-xl navbar">
@@ -37,33 +37,33 @@ const Navigation = () => {
             tabIndex={0}
             className="p-2 mt-3 bg-white shadow menu menu-compact dropdown-content rounded-box w-44 sm:w-52"
           >
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/">Home</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/about">About</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/events">Events</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/gallery">Gallery</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/signup">Join Us</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/services">Services</Link>
             </li>
-            <li className={linksClassName}>
+            <li className={LINKS_CLASSNAME}>
               <Link to="/fund">Fund</Link>
             </li>
             {user ? (
-              <li className={linksClassName}>
+              <li className={LINKS_CLASSNAME}>
                 <Link to="/profile">Profile</Link>
               </li>
             ) : (
-              <li className={linksClassName}>
+              <li className={LINKS_CLASSNAME}>
                 <Link to="/login">Login</Link>
               </li>
             )}
