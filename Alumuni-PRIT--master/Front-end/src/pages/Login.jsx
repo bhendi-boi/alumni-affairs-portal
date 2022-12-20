@@ -12,19 +12,20 @@ import alumniLogo from "../assets/oldoldlogo_whiteishhhh.png";
 
 const Login = () => {
   const [data, setData] = useLocalStorageState("loginData", {
-    email: null,
+    email: "",
     password: "",
   });
   const [error, setError] = useLocalStorageState("loginError", "");
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
   const navigate = useNavigate();
 
   // helper functions
   const validateData = () => {
-    if (data.email !== null && data.password.length > 7) {
-      setIsDisabled(true);
-    } else {
+    console.log(isDisabled);
+    if (data.email !== "" && data.password.length > 7) {
       setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
     }
   };
 
@@ -104,7 +105,7 @@ const Login = () => {
                   </label>
                   <button
                     onClick={handleForgotPassword}
-                    className="p-2 text-base-300 transition-colors duration-200 sm:mr-2 hover:text-white"
+                    className="p-2 transition-colors duration-200 text-base-300 sm:mr-2 hover:text-white"
                     type="reset"
                   >
                     <span className="text-sm">Forgot your password ?</span>
@@ -126,11 +127,12 @@ const Login = () => {
                 />
               </div>
               {error && (
-                <p className="text-red-600 capitalize w-full ml-16">{error}</p>
+                <p className="w-full ml-16 text-red-600 capitalize">{error}</p>
               )}
               <SubmitButton
                 isDisabled={isDisabled}
                 className={"w-3/4"}
+                color="green"
                 text={"Login"}
               />
               <p className="self-center py-4 text-base">

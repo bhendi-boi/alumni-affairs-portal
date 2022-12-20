@@ -8,37 +8,29 @@ const Contact = () => {
     e.preventDefault();
     console.log("kjcn");
   };
-
+  const ALUMNI_GMAIL = "alumniaffairs@iiitdm.ac.in";
+  const LINKS_CLASSNAME =
+    "w-10 h-10 transition-all duration-300 ease-in-out focus:text-blue-600 focus:scale-110 hover:scale-110";
   const links = [
     {
       href: { alumniPortalDomian },
-      icon: (
-        <BsLink className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
-      ),
+      icon: <BsLink className={LINKS_CLASSNAME} />,
     },
     {
-      href: "mailto:alumniaffairs@iiitdm.ac.in",
-      icon: (
-        <SiGmail className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
-      ),
+      href: "mailto:" + ALUMNI_GMAIL,
+      icon: <SiGmail className={LINKS_CLASSNAME} />,
     },
     {
       href: "https://www.instagram.com/alumniaffairsiiitdm/",
-      icon: (
-        <BsInstagram className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
-      ),
+      icon: <BsInstagram className={LINKS_CLASSNAME} />,
     },
     {
       href: "https://www.linkedin.com/company/alumni-affairs-iiitdm/",
-      icon: (
-        <BsLinkedin className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
-      ),
+      icon: <BsLinkedin className={LINKS_CLASSNAME} />,
     },
     {
       href: "https://www.youtube.com/channel/UCYIVsibOwxldwfDLtkhQlZQ/",
-      icon: (
-        <BsYoutube className="w-10 h-10 transition-all duration-300 ease-in-out hover:text-sky-500 focus:text-sky-500 focus:scale-105 hover:scale-105" />
-      ),
+      icon: <BsYoutube className={LINKS_CLASSNAME} />,
     },
   ];
 
@@ -58,9 +50,9 @@ const Contact = () => {
   ];
 
   return (
-    <section className="flex flex-col w-full gap-4 sm:flex-row text-paragraph">
+    <section className="flex flex-col w-full gap-4 my-3 sm:flex-row text-paragraph">
       <div className="sm:w-[50%] border-b sm:border-r px-6">
-        <h2 className="py-4 text-5xl font-medium text-subtitle">
+        <h2 className="text-3xl font-medium sm:text-5xl text-subtitle">
           Contact Info
         </h2>
         {people.map((person) => {
@@ -76,7 +68,9 @@ const Contact = () => {
             {links.map((link) => {
               return (
                 <li key={link.href}>
-                  <motion.a href={link.href}>{link.icon}</motion.a>
+                  <motion.a href={link.href} target="_blank">
+                    {link.icon}
+                  </motion.a>
                 </li>
               );
             })}
@@ -87,8 +81,9 @@ const Contact = () => {
         className="sm:w-[50%] px-6 flex flex-col"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <h2 className="text-5xl font-medium text-subtitle">Reach out !!</h2>
-        <h2 className="text-5xl font-medium text-subtitle">Reach out !!</h2>
+        <h2 className="text-3xl font-medium sm:text-5xl text-subtitle">
+          Reach out !!
+        </h2>
         <input
           className="block px-4 py-2 mx-6 my-2 mt-4 text-lg transition duration-1000 bg-transparent border-b-2 border-gray-600 border-solid focus:outline-none hover:border-blue-600 focus:border-blue-600"
           type="text"

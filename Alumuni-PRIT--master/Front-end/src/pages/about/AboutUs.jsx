@@ -4,7 +4,7 @@ import Header from "/src/components/Header";
 import Team from "./components/Team";
 
 // img
-import alumniAffairsLogo from "/src/assets/oldoldlogo_whiteishhhh.png";
+import ALUMNI_LOGO from "/src/assets/aa_logo.png";
 
 const AboutUs = () => {
   // todo?
@@ -16,10 +16,10 @@ const AboutUs = () => {
   return (
     <main className="min-h[calc(100vh - 4rem)] w-full bg-base-100">
       <Header title={"about us"} />
-      <section className="flex flex-col">
+      <section className="flex flex-col px-4">
         <AboutCard
           title={"History and Vision"}
-          imageURL={alumniAffairsLogo}
+          imageURL={ALUMNI_LOGO}
           text={[
             "The office of Alumni Affairs was established in 2013 IIITDM works to connect alumni, students and the institite to create a seamless experience through various events such as Alumni Talks, Batch-Reunions, Alumni Meets & Conferences.",
             "Our vision is to build a better community among alumni and students",
@@ -27,7 +27,7 @@ const AboutUs = () => {
         />
         <AboutCard
           title={"Message from the PIC"}
-          imageURL={alumniAffairsLogo}
+          imageURL={ALUMNI_LOGO}
           text={[
             "message from the pic lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectus",
           ]}
@@ -35,7 +35,7 @@ const AboutUs = () => {
         />
         <AboutCard
           title={"Message from the Director"}
-          imageURL={alumniAffairsLogo}
+          imageURL={ALUMNI_LOGO}
           text={[
             "message from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectusmessage from the director lLorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis delectus",
           ]}

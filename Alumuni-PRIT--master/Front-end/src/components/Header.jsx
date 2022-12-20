@@ -41,14 +41,14 @@ const Header = ({ title, links, setLinks }) => {
     <header className="sticky top-0 z-10 flex items-center w-full h-16 bg-white shadow-xl md:h-20 font-head">
       <Link
         to=""
-        className="pl-6 pr-3 font-medium capitalize xs:px-6"
+        className="px-4 font-medium capitalize"
         onClick={links && handleClick}
       >
         <h1 className="text-3xl sm:text-5xl text-title">{title}</h1>
       </Link>
       {links && (
         <div className="flex items-center gap-2 xs:gap-4 sm:gap-6">
-          <p className="py-2 text-3xl sm:py-4">❯</p>
+          <span className="py-2 text-3xl sm:py-4">❯</span>
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
